@@ -3,6 +3,7 @@ import '@fontsource/atkinson-hyperlegible-mono';
 import "../styles/global.css";
 
 import AsideMenu from '../components/AsideMenu.astro';
+import ArrowRightAside from '../components/ArrowRightAside.astro';
 
 const { lang, t } = Astro.props;
 ---
@@ -16,6 +17,7 @@ const { lang, t } = Astro.props;
 
 		<script type="text/javascript" src="/src/scripts/darkMode.js" defer></script>
 		<script type="text/javascript" src="/src/scripts/language.js" defer></script>
+		<script type="text/javascript" src="/src/scripts/asideMenu.js" defer></script>
 		<!-- <script type="text/javascript" src="/src/scripts/navegation.js" defer></script> -->
 
 		<meta 
@@ -40,6 +42,8 @@ const { lang, t } = Astro.props;
 				<AsideMenu lang={lang} t={t} />
 			</aside>
 			
+			<ArrowRightAside />
+
 			<main>
 				<slot />
 			</main>

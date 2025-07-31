@@ -3,7 +3,6 @@ import DarkMode from '../assets/icons/darkmode.svg';
 import LightMode from '../assets/icons/lightmode.svg';
 import Bar from '../assets/icons/bar.svg';
 
-import ArrowLeftAside from './ArrowLeftAside.astro';
 import AsideMenuContainer from './AsideMenuContainer.astro';
 import SettingElement from './SettingElement.astro';
 import NavElement from './NavElement.astro';
@@ -14,11 +13,7 @@ const { lang, t, class: className } = Astro.props;
 <nav>
   <AsideMenuContainer class="top">
 
-    <SettingElement>
-      <ArrowLeftAside />
-    </SettingElement>
-
-    <SettingElement>
+    <SettingElement class="first-element">
       {t.themeOptions.label}
       <button id="darkButton">
         <DarkMode id="darksvg" />

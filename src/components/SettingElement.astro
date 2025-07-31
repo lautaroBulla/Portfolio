@@ -1,5 +1,8 @@
+---
+const { class: className } = Astro.props;
+---
 
-<li>
+<li class={className ?? ''}>
   <slot />
 </li>
 
@@ -9,5 +12,9 @@
     align-items: center;
     justify-content: space-between;
     gap: 0.5rem;
+  }
+
+  .first-element {
+    margin-top: 32px;
   }
 </style>

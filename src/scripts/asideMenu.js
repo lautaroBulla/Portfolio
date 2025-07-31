@@ -1,15 +1,17 @@
-const arrowRightButton = document.getElementById('arrow-right');
-const arrowLeftButton = document.getElementById('arrow-left');
+const arrowRightButton = document.querySelector('#arrow-right-button');
+const arrowRightSvg = document.querySelector('#arrow-right-svg');
+const arrowLeftSvg = document.querySelector('#arrow-left-svg');
 const asideMenu = document.querySelector('aside');
 
-arrowRightButton.addEventListener('click', () => {
+arrowRightSvg.addEventListener('click', () => {
   asideMenu.classList.add('open');
-  arrowRightButton.classList.add('hidden');
-  arrowLeftButton.classList.remove('hidden');
+  arrowRightSvg.classList.add('hidden');
+  arrowLeftSvg.classList.remove('hidden');
 });
 
-arrowLeftButton.addEventListener('click', () => {
+arrowLeftSvg.addEventListener('click', () => {
   asideMenu.classList.remove('open');
-  arrowLeftButton.classList.add('hidden');
-  arrowRightButton.classList.remove('hidden');
+  asideMenu.classList.add('not-open');
+  arrowLeftSvg.classList.add('hidden');
+  arrowRightSvg.classList.remove('hidden');
 });

@@ -1,22 +1,52 @@
+---
+import '@fontsource/atkinson-hyperlegible-mono';
+import "../styles/global.css";
+
+import AsideMenu from '../components/AsideMenu.astro';
+
+const { lang, t } = Astro.props;
+---
+
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
+		<title>Lautaro Portillo Dev</title>
+
+		<script type="text/javascript" src="/src/scripts/darkMode.js" defer></script>
+		<script type="text/javascript" src="/src/scripts/language.js" defer></script>
+		<!-- <script type="text/javascript" src="/src/scripts/navegation.js" defer></script> -->
+
+		<meta 
+			name="description"
+			content="Lautaro Portillo website personal. Un lugar donde comparto mis proyectos y aprendizajes en el mundo del desarrollo web y la programación."
+		/>
+
+		<meta property="og:title" content="Lautaro Portillo Dev" />
+		<meta property="og:description" content="Lautaro Portillo website personal. Un lugar donde comparto mis proyectos y aprendizajes en el mundo del desarrollo web y la programación." />
+		<!-- Poner imagen -->
+		<meta property="og:url" content="https://lautaroportillo.dev" />
+		<meta property="og:type" content="website" />
+		
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+
+		<!-- Icons -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/core@1.4.0/dist/css/tabler-flags.min.css" />
 	</head>
 	<body>
-		<slot />
+		<div id="app">
+			<aside>
+				<AsideMenu lang={lang} t={t} />
+			</aside>
+			
+			<main>
+				<slot />
+			</main>
+		</div>
 	</body>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+
 </style>

@@ -11,7 +11,26 @@ arrowRightSvg.addEventListener('click', () => {
 
 arrowLeftSvg.addEventListener('click', () => {
   asideMenu.classList.remove('open');
-  asideMenu.classList.add('not-open');
   arrowLeftSvg.classList.add('hidden');
   arrowRightSvg.classList.remove('hidden');
+});
+
+const mediaQuery = window.matchMedia('(min-width: 768px)');
+
+if (mediaQuery.matches) {
+  asideMenu.classList.add('open');
+  arrowRightSvg.classList.add('hidden');
+  arrowLeftSvg.classList.remove('hidden');
+}
+
+mediaQuery.addEventListener('change', (e) => {
+  if (e.matches) {
+    asideMenu.classList.add('open');
+    arrowRightSvg.classList.add('hidden');
+    arrowLeftSvg.classList.remove('hidden');
+  } else {
+    asideMenu.classList.remove('open');
+    arrowLeftSvg.classList.add('hidden');
+    arrowRightSvg.classList.remove('hidden');
+  }
 });

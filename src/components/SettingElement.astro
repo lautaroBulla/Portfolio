@@ -17,4 +17,10 @@ const { class: className } = Astro.props;
   .first-element {
     margin-top: 32px;
   }
+
+  @media (min-width: 768px) {
+    .first-element {
+      margin-top: 0;
+    }
+  }
 </style>

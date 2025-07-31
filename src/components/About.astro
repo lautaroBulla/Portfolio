@@ -1,0 +1,62 @@
+---
+const { t, id } = Astro.props;
+---
+
+<section id={id}>
+  <div class="header">
+    <h1>{t.about.name}</h1>
+  </div>
+  <div class="content">
+    <p>{t.about.description}</p>
+  </div>
+</section>
+
+<style>
+  section#about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    max-width: 80%;
+    margin-inline: auto;
+  }
+  
+  .header h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+
+    overflow: hidden;
+    border-right: .15em solid orange;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .15em;
+    animation: 
+      typing 2s steps(60, end),
+      blink-caret .50s step-end infinite;
+  }
+
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+
+  @keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: orange; }
+  }
+
+  @media (min-width: 768px) {
+    .header h1 {
+      font-size: 2.2rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .header h1 {
+      font-size: 2.5rem;
+    }
+  }
+</style>

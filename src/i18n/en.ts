@@ -15,4 +15,8 @@ export default {
     projects: "Projects",
     technologies: "Technologies"
   },
+  about: {
+    name: "<Lautaro Portillo />",
+    description: "FullStack Developer with experience in real projects, both institutional and personal."
+  }
 }

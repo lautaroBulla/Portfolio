@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+
+@layer base {
+  :root {
+    --color-text: #1A1A1A;
+    --color-background: #F2F2F2;
+    --color-gray-light: #A1A1A1;
+    --color-gray-dark: #4A4A4A;
+  }
+
+  .dark {
+    --color-text: #F2F2F2;
+    --color-background: #1A1A1A;
+    --color-gray-light: #4A4A4A;
+    --color-gray-dark: #A1A1A1;
+  }
+  
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100dvh;
+    font-family: 'Atkinson Hyperlegible Mono', sans-serif;
+    color: var(--color-text);
+    background-color: var(--color-background);
+  }
+}
+
+#app {
+  position: relative;
+  height: 100dvh;
+  display: grid;
+  grid-template-areas: "aside main";
+  grid-template-columns: 200px 1fr;
+}
+
+aside {
+  grid-area: aside;
+  display: flex;
+  flex-direction: column;
+  border-right: 2px solid var(--color-gray-dark);
+  padding: 1rem;
+}
+
+main {
+  grid-area: main;
+}
+
+svg {
+  width: 1.3rem;
+  height: 1.3rem;
+  stroke-width: 1.5; 
+}
+
+.border-radius {
+  border-radius: 5px;
+}
+
+@media (min-width: 1024px) {
+
+  svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}

@@ -1,0 +1,21 @@
+---
+const { class: className } = Astro.props;
+---
+
+<ul class={`${className || ''}`}>
+  <slot />
+</ul>
+
+<style>
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  .top {
+    position: absolute;
+    top: 0;
+  }
+</style>

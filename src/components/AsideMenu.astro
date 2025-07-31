@@ -1,0 +1,78 @@
+---
+import DarkMode from '../assets/icons/darkmode.svg';
+import LightMode from '../assets/icons/lightmode.svg';
+import Bar from '../assets/icons/bar.svg';
+
+import AsideMenuContainer from './AsideMenuContainer.astro';
+import SettingElement from './SettingElement.astro';
+import NavElement from './NavElement.astro';
+
+const { lang, t } = Astro.props;
+---
+
+<nav>
+  <AsideMenuContainer class="top">
+    <SettingElement>
+      {t.themeOptions.label}
+      <button id="darkButton">
+        <DarkMode id="darksvg" />
+      </button>
+      <button id="lightButton">
+        <LightMode id="lightsvg" />
+      </button>
+    </SettingElement>
+
+    <SettingElement>
+      {t.languageOptions.label}
+      <button id="spanishButton" class={`${lang === 'es' ? 'hidden' : ''}`}><span class="flag flag-xs flag-country-es border-radius"></span></button>
+      <button id="englishButton" class={`${lang === 'en' ? 'hidden' : ''}`}><span class="flag flag-xs flag-country-gb border-radius"></span></button>
+    </SettingElement>
+  </AsideMenuContainer>
+
+  <AsideMenuContainer>
+    <NavElement href="/">
+        <Bar />
+        {t.nav.about}
+    </NavElement>
+    <NavElement href="/experience">
+        <Bar />
+        {t.nav.experience}
+    </NavElement>
+    <NavElement href="/projects">
+        <Bar />
+        {t.nav.projects}
+    </NavElement>
+    <NavElement href="/technologies">
+        <Bar />
+        {t.nav.technologies}
+    </NavElement>
+  </AsideMenuContainer>
+
+  <span></span>
+</nav>
+
+<style>
+  nav {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+  }
+
+  button {
+    filter: grayscale(100%);
+    transition: transform 0.1s linear, filter 0.1s linear;
+  }
+  button:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    filter: grayscale(0%);
+  }
+  button svg:hover {
+    fill: var(--color-text);
+  }
+  .hidden {
+    display: none;
+  }
+</style>

@@ -28,21 +28,15 @@
   body {
     margin: 0;
     width: 100%;
-    height: 100dvh;
+    height: 100%;
     font-family: 'Atkinson Hyperlegible Mono', sans-serif;
     color: var(--color-text);
     background-color: var(--color-background);
   }
 }
 
-#app {
-  position: relative;
-  height: 100dvh;
-  display: flex;
-}
-
 aside {
-  position: absolute;
+  position: fixed;
   z-index: 10;
   top: 0;
   left: 0;
@@ -60,9 +54,11 @@ aside.open {
 }
 
 main {
+  height: 100%;
   display: flex;
   flex-direction: column;
   flex: 1;
+  background-color: var(--color-background);
 }
 main.filter {
   filter: blur(0.2rem);
@@ -80,8 +76,6 @@ svg {
 
 @media (min-width: 768px) {
   #app {
-    position: relative;
-    height: 100dvh;
     display: grid;
     grid-template-areas: "aside main";
     grid-template-columns: 200px 1fr;

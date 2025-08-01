@@ -4,7 +4,8 @@ const { t, id } = Astro.props;
 
 <section id={id}>
   <div class="header">
-    <h1>{t.about.name}</h1>
+    <h1 class="name">{t.about.name}</h1>
+    <h1 class="cursor"></h1>
   </div>
   <div class="content">
     <p>{t.about.description}</p>
@@ -22,30 +23,45 @@ const { t, id } = Astro.props;
     max-width: 80%;
     margin-inline: auto;
   }
-  
-  .header h1 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
 
+  .header {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+  
+  .header .name {
     overflow: hidden;
-    border-right: .15em solid orange;
+    border-right: 3px solid var(--color-text);
     white-space: nowrap;
     margin: 0 auto;
-    letter-spacing: .15em;
-    animation: 
-      typing 2s steps(60, end),
-      blink-caret .50s step-end infinite;
+    animation: typing 2s steps(60, end) forwards;
   }
-
+  .header .name.finished {
+    animation: none;
+    border-right: none;
+  }
   @keyframes typing {
     from { width: 0; }
     to { width: 100%; }
   }
 
-  @keyframes blink-caret {
-    from, to { border-color: transparent; }
-    50% { border-color: orange; }
+  .header .cursor {
+    display: none;
+    width: 1ch;
+    height: 1.5em;
+    border-left: 3px solid var(--color-text);
+    vertical-align: bottom;
+    animation: cursorexpand 1s linear infinite;
+  }
+  .header .cursor.display {
+    display: inline-block;
+  }
+  @keyframes cursorexpand {
+    from, to { transform: scaleY(0); }
+    50% { transform: scaleY(1); }
   }
 
   @media (min-width: 768px) {
@@ -60,3 +76,10 @@ const { t, id } = Astro.props;
     }
   }
 </style>
+
+<script>
+  setTimeout(() => {
+    document.querySelector('.header .name')?.classList.add('finished');
+    document.querySelector('.header .cursor')?.classList.add('display');
+  }, 2100);
+</script>

@@ -25,6 +25,7 @@ const { t, id } = Astro.props;
   }
 
   .header {
+    position: relative;
     display: flex;
     align-items: center;
     font-size: 1.5rem;
@@ -34,14 +35,14 @@ const { t, id } = Astro.props;
   
   .header .name {
     overflow: hidden;
-    border-right: 3px solid var(--color-text);
+    border-right: .10em solid var(--color-text);
     white-space: nowrap;
-    margin: 0 auto;
-    animation: typing 2s steps(60, end) forwards;
+    margin: 0;
+    animation: typing 1.8s steps(60, end) forwards;
   }
   .header .name.finished {
     animation: none;
-    border-right: none;
+    border-right: .10em solid transparent;
   }
   @keyframes typing {
     from { width: 0; }
@@ -49,19 +50,19 @@ const { t, id } = Astro.props;
   }
 
   .header .cursor {
-    display: none;
+    position: absolute;
+    right: 0;
     width: 1ch;
-    height: 1.5em;
-    border-left: 3px solid var(--color-text);
-    vertical-align: bottom;
-    animation: cursorexpand 1s linear infinite;
+    height: 1.5em; 
+    border-right: .10em solid transparent;
+    animation: cursorexpand 1s ease-in-out infinite;
   }
   .header .cursor.display {
-    display: inline-block;
+    border-right: .10em solid var(--color-text);
   }
   @keyframes cursorexpand {
-    from, to { transform: scaleY(0); }
-    50% { transform: scaleY(1); }
+    from, to { transform: scaleY(1); }
+    50% { transform: scaleY(0); }
   }
 
   @media (min-width: 768px) {
@@ -81,5 +82,5 @@ const { t, id } = Astro.props;
   setTimeout(() => {
     document.querySelector('.header .name')?.classList.add('finished');
     document.querySelector('.header .cursor')?.classList.add('display');
-  }, 2100);
+  }, 2000);
 </script>

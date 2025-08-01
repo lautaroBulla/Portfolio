@@ -3,17 +3,25 @@
 
 @layer base {
   :root {
-    --color-text: #1A1A1A;
-    --color-background: #F2F2F2;
+    /* --color-text: #1A1A1A;
+    --color-background: #F2F2F2; */
+    --color-text: #1a1b26;
+    --color-background: #e6e7ed;
     --color-gray-light: #A1A1A1;
     --color-gray-dark: #4A4A4A;
+    --color-object: #006c86;
+    --color-html: #965027;
   }
 
   .dark {
-    --color-text: #F2F2F2;
-    --color-background: #1A1A1A;
+    /* --color-text: #F2F2F2;
+    --color-background: #1A1A1A; */
+    --color-text: #e6e7ed;
+    --color-background: #1a1b26;
     --color-gray-light: #4A4A4A;
     --color-gray-dark: #A1A1A1;
+    --color-object: #2ac3de;
+    --color-html: #ff9e64;
   }
   
   html,
@@ -35,6 +43,7 @@
 
 aside {
   position: absolute;
+  z-index: 10;
   top: 0;
   left: 0;
   flex-direction: column;
@@ -54,6 +63,9 @@ main {
   display: flex;
   flex-direction: column;
   flex: 1;
+}
+main.filter {
+  filter: blur(0.2rem);
 }
 
 svg {
@@ -85,5 +97,8 @@ svg {
 
   main {
     grid-area: main;
+  }
+  main.filter {
+    filter: none;
   }
 }

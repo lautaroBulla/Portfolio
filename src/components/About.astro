@@ -1,38 +1,69 @@
 ---
+import LinkedInSvg from '../assets/icons/linkedin.svg';
+import GitHubSvg from '../assets/icons/github.svg';
+import Face from '../assets/img/face.webp';
 const { t, id } = Astro.props;
 ---
 
 <section id={id}>
+
   <div class="header">
-    <h1 class="name">{t.about.name}</h1>
-    <h1 class="cursor"></h1>
+    <img src={Face.src} alt="Lautaro Portillo" width="100" height="100" /> 
+    <div class="name-container">
+      <h1 class="name">
+        <span style="color: var(--color-html)">&lt;</span><span style="color: var(--color-object)">Lautaro Portillo</span> <span style="color: var(--color-html)">/&gt;</span>
+      </h1>
+      <h1 class="cursor"></h1>
+    </div>
   </div>
+
   <div class="content">
     <p>{t.about.description}</p>
+    <div class="links">
+      <a class="border-radius" href="https://www.linkedin.com/in/lautaroportillo/" target="_blank" rel="noopener noreferrer">
+        <LinkedInSvg />
+        LinkedIn
+      </a>
+      <a class="border-radius" href="https://github.com/lautaroBulla" target="_blank" rel="noopener noreferrer">
+        <GitHubSvg />
+        GitHub
+      </a>
+    </div>  
   </div>
+
 </section>
 
 <style>
   section#about {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    text-align: center;
     height: 100%;
     max-width: 80%;
     margin-inline: auto;
   }
 
   .header {
-    position: relative;
     display: flex;
-    align-items: center;
-    font-size: 1.5rem;
+    flex-direction: column;
     margin-bottom: 1rem;
-    font-weight: 700;
+  }
+  .header img {
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 50%;
+    border: 2px solid var(--color-text);
   }
   
+  .name-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: fit-content;
+
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
   .header .name {
     overflow: hidden;
     border-right: .10em solid var(--color-text);
@@ -65,15 +96,58 @@ const { t, id } = Astro.props;
     50% { transform: scaleY(0); }
   }
 
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .links {
+    display: flex;
+    gap: 1rem;
+  }
+  .links a {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--color-text);
+    padding-inline: 0.2rem;
+    padding-block: 0.1rem;
+    gap: 0.5rem;
+  }
+  .links a:hover {
+    transform: scale(1.05);
+  }
+
   @media (min-width: 768px) {
     .header h1 {
       font-size: 2.2rem;
     }
+
+    .header img {
+      width: 5rem;
+      height: 5rem;
+    }
   }
 
   @media (min-width: 1024px) {
+    .header {
+      flex-direction: row;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .header img {
+      width: 6rem;
+      height: 6rem;
+    }
     .header h1 {
       font-size: 2.5rem;
+    }
+    .content p {
+      font-size: 1.3rem;
+    }
+    .links a {
+      padding-inline: 0.5rem;
+      padding-block: 0.25rem;
     }
   }
 </style>

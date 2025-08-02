@@ -17,5 +17,8 @@ export default {
   },
   about: {
     description: "Desarrollador FullStack con experiencia en proyectos reales tanto institucionales como personales.",
+  },
+  projects: {
+    title: "Mis Proyectos",
   }
 }

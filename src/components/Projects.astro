@@ -1,4 +1,6 @@
 ---
+import ProjectCard from './ProjectCard.astro';
+
 import ArrowLeft from '../assets/icons/arrowleft.svg';
 import ArrowRight from '../assets/icons/arrowright.svg';
 import Square from '../assets/icons/square.svg'
@@ -8,143 +10,40 @@ import Laravel from '../assets/icons/laravel.svg';
 import Vue from '../assets/icons/vue.svg';
 import MySQL from '../assets/icons/mysql.svg';
 
-import EstadisticasMobile from '../assets/img/estadisticasmobile.jpeg';
+import EstadisticasDesktop from '../assets/img/estadisticasdesktop.png';
+import EstadisticasMobile from '../assets/img/estadisticasmobile.png';
+import Buscaminas from '../assets/img/buscaminas.png';
 
 const { id, t } = Astro.props;
 ---
 
 <section id={id}>
-  <div class="browser">
-
-    <header>
-      <div class="search">
-        <p>servicios.sanjose.gub.uy</p>
-      </div>
-      <Link />
-    </header>
-
-    <div class="project">
-      <h1>Visor de Estadísticas</h1>
-      <p>
-        Pagina oficial de la Intendencia de San Jose,
-        donde encontraras todo tipo de estadísticas de la ciudad.
-      </p>
-      <div class="stack">
-        <p>
-          Stack:
-        </p>
-        <Vue />
-        <Laravel />
-        <MySQL />
-      </div>
-      <img src={EstadisticasMobile.src} alt="Estadisticas Mobile" />
-    </div>
-
-    <footer>
-      <div class="changePage">
-        <ArrowLeft />
-        <ArrowRight />
-      </div>
-      <div class="selectProject">
-        <Square />
-      </div>
-    </footer>
+  <h1>{t.projects.title}</h1>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <ProjectCard 
+      t={t} 
+      img={EstadisticasDesktop.src} 
+      name="Visor de Estadisticas"
+    />
+    <ProjectCard 
+      t={t} 
+      img={Buscaminas.src}
+      name="Buscaminas" 
+    />
   </div>
 </section>
 
 <style>
   section#projects {
     display: flex;
-    justify-content: center;
-    margin-inline: auto;
+    flex-direction: column;
     width: 80%;
-    margin-block: 5rem;
+    margin-inline: auto;
+    margin-top: 5rem;
   }
 
-  .browser {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    width: auto;
-    height: 500px;
-    aspect-ratio: 9 / 16;
-    border: 2px solid var(--color-text);
-    border-radius: 10px;
-    overflow: hidden;
-  }
-
-  header {
-    height: 30.8px;
-    width: 100%;
-
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 0.4rem;
-
-    background-color: gray;
-  }
-  header .search {
-    width: 100%;
-    height: 100%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 4.4px;
-
-    font-size: 12px;
-    color: black;
-
-    background-color: white;
-  }
-
-  .project {
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
-    flex: 1;
-    font-size: 12px;
-    overflow: auto;
-  }
-  .project h1 {
-    display: flex;
-    justify-content: center;
-    font-size: 14px;
-    font-weight: 700;
-    margin-block: 0.5rem;
-  }
-  .project p {
-    margin-block: 0.5rem;
-    text-align: justify;
-  }
-  .project .stack {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  .project img {
-    height: 100%;
-    width: auto;
-    aspect-ratio: 9 / 16;
-    border-radius: 8px;
-    margin-top: 0.5rem;
-  }
-
-  footer {
-    height: 30.8px;
-    width: 100%;
-
-    display: grid;
-    grid-template-columns: 1fr 1fr; 
-    align-items: center;
-    padding-block: 0.2rem;
-
-    background-color: gray;
-  }
-  footer .changePage, .selectProject {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
+  h1 {
+    font-size: 1.2rem;
+    font-style: italic;
   }
 </style>

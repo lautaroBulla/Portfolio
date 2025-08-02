@@ -17,5 +17,8 @@ export default {
   },
   about: {
     description: "FullStack Developer with experience in real projects, both institutional and personal."
+  },
+  projects: {
+    title: "My Projects"
   }
 }

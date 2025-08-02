@@ -39,7 +39,7 @@ const { t, id } = Astro.props;
     flex-direction: column;
     justify-content: center;
     height: 100dvh;
-    max-width: 80%;
+    width: 80%;
     margin-inline: auto;
   }
 
@@ -118,7 +118,7 @@ const { t, id } = Astro.props;
   }
 
   @media (min-width: 768px) {
-    .header h1 {
+    .name-container {
       font-size: 2.2rem;
     }
 
@@ -139,7 +139,7 @@ const { t, id } = Astro.props;
       width: 6rem;
       height: 6rem;
     }
-    .header h1 {
+    .name-container {
       font-size: 2.5rem;
     }
     .content p {

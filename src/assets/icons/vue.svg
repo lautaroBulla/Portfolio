@@ -1,8 +1,5 @@
-<svg 
-  viewBox="0 0 256 221" 
-  xmlns="http://www.w3.org/2000/svg" 
-  preserveAspectRatio="xMinYMin meet">
-  <path d="M204.8 0H256L128 220.8 0 0h97.92L128 51.2 157.44 0h47.36z" fill="#41B883"/>
-  <path d="M0 0l128 220.8L256 0h-51.2L128 132.48 50.56 0H0z" fill="#41B883"/>
-  <path d="M50.56 0L128 133.12 204.8 0h-47.36L128 51.2 97.92 0H50.56z" fill="#35495E"/>
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" id="Vue--Streamline-Svg-Logos" height="24" width="24">
+  <path fill="#41b883" d="M19.05 1.8657225H23.75L12 22.134475 0.25 1.8657225h8.98875L12 6.565725 14.7025 1.8657225H19.05Z" stroke-width="0.25"></path>
+  <path fill="#41b883" d="M0.25 1.8657225 12 22.134475 23.75 1.8657225H19.05L12 14.026975 4.89125 1.8657225H0.25Z" stroke-width="0.25"></path>
+  <path fill="#35495e" d="m4.89135 1.8657225 7.10875 12.2200025 7.05 -12.2200025h-4.3475l-2.7025 4.7000025 -2.76125 -4.7000025h-4.3475Z" stroke-width="0.25"></path>
 </svg>

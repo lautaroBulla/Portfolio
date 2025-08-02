@@ -6,29 +6,40 @@ import ArrowRight from '../assets/icons/arrowright.svg';
 import Square from '../assets/icons/square.svg'
 import Link from '../assets/icons/link.svg';
 
+import Estadisticas from '../assets/img/estadisticas.png';
 import Laravel from '../assets/icons/laravel.svg';
 import Vue from '../assets/icons/vue.svg';
 import MySQL from '../assets/icons/mysql.svg';
 
-import EstadisticasDesktop from '../assets/img/estadisticasdesktop.png';
-import EstadisticasMobile from '../assets/img/estadisticasmobile.png';
 import Buscaminas from '../assets/img/buscaminas.png';
+import Nuxt from '../assets/icons/nuxt.svg';
+import Nest from '../assets/icons/nest.svg';
+import PostgreSQL from '../assets/icons/postgresql.svg';
+import AWS from '../assets/icons/aws.svg';
 
 const { id, t } = Astro.props;
 ---
 
 <section id={id}>
   <h1>{t.projects.title}</h1>
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+  <div class="projects-container">
     <ProjectCard 
-      t={t} 
-      img={EstadisticasDesktop.src} 
-      name="Visor de Estadisticas"
-    />
+      img={Estadisticas.src} 
+      name={t.projects.estadisticas.title}
+      company={t.projects.estadisticas.company}
+      description={t.projects.estadisticas.description}
+      stack={[Vue, Laravel, MySQL]}
+      link="https://servicios.sanjose.gub.uy/Estadisticas"
+    />  
     <ProjectCard 
       t={t} 
       img={Buscaminas.src}
-      name="Buscaminas" 
+      name={t.projects.buscaminas.title}
+      company={t.projects.buscaminas.company}
+      description={t.projects.buscaminas.description}
+      stack={[Nuxt, Nest, PostgreSQL, AWS]}
+      github="https://github.com/lautaroBulla/Buscaminas"
+      link="https://www.buscaminassa.com/"
     />
   </div>
 </section>
@@ -39,11 +50,25 @@ const { id, t } = Astro.props;
     flex-direction: column;
     width: 80%;
     margin-inline: auto;
-    margin-top: 5rem;
+    margin-block: 2rem;
   }
 
   h1 {
     font-size: 1.2rem;
     font-style: italic;
+    text-decoration: underline;
+    margin-block: 1rem;
+  }
+
+  .projects-container {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  @media (min-width: 1024px) {
+    .projects-container {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
   }
 </style>

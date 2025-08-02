@@ -19,6 +19,16 @@ export default {
     description: "Desarrollador FullStack con experiencia en proyectos reales tanto institucionales como personales.",
   },
   projects: {
-    title: "Mis Proyectos",
+    title: "Mis Proyectos:",
+    estadisticas: {
+      title: "Visor de Estadísticas",
+      company: "Intendencia de San José",
+      description: "Pagina oficial de la ciudad, donde encontrarás estadísticas de tematicas varias: Poblacion, Salud, Empleo y otras."
+    },
+    buscaminas: {
+      title: "Buscaminas",
+      company: "Proyecto Personal",
+      description: "Replica del mitico juego Buscaminas, incorporando sistemas de ranking, autenticación, personalización del tablero y juego.",
+    }
   }
 }

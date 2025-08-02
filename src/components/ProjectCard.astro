@@ -1,5 +1,8 @@
 ---
-const { t, img, name } = Astro.props;
+import Link from '../assets/icons/link.svg';
+import Github from '../assets/icons/github.svg';
+
+const { t, img, name, company, description, stack, github, link } = Astro.props;
 ---
 
 <article>
@@ -7,6 +10,35 @@ const { t, img, name } = Astro.props;
     <img src={img} />
     <div class="background-text">
       <h2>{name}</h2>
+    </div>
+  </div>
+
+  <div class="back">
+    <h2>{name}</h2>
+    <p class="company">{company}</p>
+    <p class="description">{description}</p>
+    <div class="stack">
+      <p>Stack:</p>
+      {stack && stack.length > 0 && (
+        stack.map((Icon:any) => <Icon />)
+      )}
+    </div>  
+    <div class="links">
+      {github && (
+        <div class="links-container">
+          <a href={github} target="_blank" rel="noopener noreferrer">
+            <Github />
+          </a>
+        </div>
+      )}
+
+      {link && (
+        <div class="links-container">
+          <a href={link} target="_blank" rel="noopener noreferrer">
+            <Link />
+          </a>
+        </div>
+      )}
     </div>
   </div>
 </article>
@@ -20,6 +52,7 @@ const { t, img, name } = Astro.props;
     overflow: hidden;
   }
   .front {
+    display: none;
     width: 100%;
     height: 100%;
   }
@@ -36,10 +69,55 @@ const { t, img, name } = Astro.props;
     left: 0.5rem;
     width: fit-content;
     border-radius: 5px;
-    background: rgba(var(--color-background-rgb), 0.8);
+    background-color: var(--color-background);
   }
   .front .background-text h2 {
+    padding-inline: 0.5rem;
     font-weight: 700;
-    opacity: 1;
+  }
+
+  .back {
+    background-color: var(--color-background-dark);
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    text-align: left;
+    position: relative;
+  }
+  .back h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0;
+  }
+  .back p {
+    font-size: 0.9rem;
+  }
+  .company {
+    font-style: italic;
+  }
+  .description {
+    margin-block: 1.3rem;
+  }
+  .stack {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .links {
+    position: absolute;
+    bottom: 1rem;
+    left: 0;
+    right: 0;
+    padding-inline: 1rem;
+    display: flex;
+  }
+  .links-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  .links-container a {
+    all: unset;
   }
 </style>

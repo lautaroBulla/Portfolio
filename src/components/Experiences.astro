@@ -1,0 +1,56 @@
+---
+const { t, id } = Astro.props;
+
+import FrontEnd from "../assets/icons/frontend.svg";
+import BackEnd from "../assets/icons/backend.svg";
+
+import ExperienceCard from "./ExperienceCard.astro";
+---
+
+<section id={id}>
+  <h2>{t.experience.title}</h2>
+  <div class="timeline"> 
+    <ExperienceCard
+      icon={FrontEnd}
+      title={t.experience.job1.title}
+      company={t.experience.job1.company}
+      date={t.experience.job1.date}
+      description={t.experience.job1.description}
+      type={t.experience.job1.type}
+      class="right"
+    />
+    <ExperienceCard
+      icon={BackEnd}
+      title={t.experience.job1.title}
+      company={t.experience.job1.company}
+      date={t.experience.job1.date}
+      description={t.experience.job1.description}
+      type={t.experience.job1.type}
+      class="left"
+    />
+  </div>
+</section>
+
+<style>
+  section#experience {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-inline: auto;
+    margin-block: 5rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+    font-style: italic;
+    text-decoration: underline;
+    margin-block: 1rem;
+  }
+
+  .timeline {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+  }
+</style>

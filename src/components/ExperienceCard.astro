@@ -1,0 +1,115 @@
+---
+const { title, company, date, description, type, class:className, icon } = Astro.props;
+---
+
+{ className && className.includes("right") && 
+  (
+    <div class="icon">
+      {icon && <icon />}
+    </div>
+    <div class="job-card right">
+      <div class="dates right">
+        <p class="date">{date}</p>
+        {type && <p class="type">{type}</p>}
+      </div>
+      <div class="info right">
+        <h3>{title}</h3>
+        <p class="company">{company}</p>
+        <p class="description">{description}</p>
+      </div>
+    </div>
+  )
+}
+{ className && className.includes("left") && 
+  (
+    <div class="job-card left">
+      <div class="info left">
+        <h3>{title}</h3>
+        <p class="company">{company}</p>
+        <p class="description">{description}</p>
+      </div>
+      <div class="dates left">
+        <p class="date">{date}</p>
+        {type && <p class="type">{type}</p>}
+      </div>
+    </div>
+    <div class="icon">
+      {icon && <icon />}
+    </div>
+  )
+}
+
+<style>
+  .job-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0px 3px 6px 3px rgba(0, 0, 0, 0.2);
+  }
+  
+  .dates {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--color-object);
+    color: whitesmoke;
+  }
+  .dates .date {
+    font-weight: 700;
+  }
+  .info {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    background: var(--color-background-dark);
+  }
+  .info h3 {
+    font-weight: 700;
+  }
+  .info p {
+    font-size: 0.9rem;
+  }
+  .info .company {
+    font-style: italic;
+  }
+  .info .description {
+    margin-top: 1.3rem;
+  }
+
+  @media (min-width: 1024px) {
+    .job-card.right {
+      display: grid;   
+      grid-template-columns: auto 1fr;
+      border-radius: 0 5px 5px 0;
+      overflow: hidden;
+      box-shadow: 5px 5px 6px 3px rgba(0, 0, 0, 0.2);
+    }
+    .info.right {
+      background: linear-gradient(to right, var(--color-background-dark), var(--color-background));
+    }
+    .dates.right {
+      border-radius: 5px 0 0 5px;
+    }
+
+    .job-card.left {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      box-shadow: -5px 5px 6px 3px rgba(0, 0, 0, 0.2);
+      border-radius: 5px 0 0 5px;
+    }  
+    .dates.left {
+      border-radius: 0 5px 5px 0;
+    }
+    .info.left {
+      background: linear-gradient(to left, var(--color-background-dark), var(--color-background));
+    }
+
+    .info p {
+      font-size: 1rem;
+    }
+  }
+</style>
+

@@ -1,3 +1,5 @@
+import { date } from "astro:schema";
+
 export default {
   themeOptions: {
     label: "Tema:",
@@ -17,6 +19,16 @@ export default {
   },
   about: {
     description: "Desarrollador FullStack con experiencia en proyectos reales tanto institucionales como personales.",
+  },
+  experience: {
+    title: "Experiencia:",
+    job1: {
+      title: "Desarrollador FullStack",
+      company: "Intendencia de San José",
+      description: "Desarrollo de aplicaciones web y mantenimiento de sistemas existentes.",
+      date: "Marzo 2024 - Julio 2025",
+      type: "Pasantía"
+    }
   },
   projects: {
     title: "Mis Proyectos:",

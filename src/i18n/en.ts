@@ -18,6 +18,16 @@ export default {
   about: {
     description: "FullStack Developer with experience in real projects, both institutional and personal."
   },
+  experience: {
+    title: "Experience:",
+    job1: {
+      title: "FullStack Developer",
+      company: "Intendencia de San José",
+      description: "Development of web applications and maintenance of existing systems.",
+      date: "March 2024 - July 2025",
+      type: "Internship"
+    }
+  },
   projects: {
     title: "My Projects:",
     estadisticas: {

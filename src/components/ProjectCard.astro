@@ -72,7 +72,7 @@ const { img, name, company, description, stack, github, link } = Astro.props;
     backface-visibility: hidden;
     border-radius: 5px; 
     overflow: hidden;
-    box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 3px 6px 3px rgba(0, 0, 0, 0.2);
   }
 
   .front img {
@@ -145,6 +145,10 @@ const { img, name, company, description, stack, github, link } = Astro.props;
   @media (min-width: 1024px) {
     .card {
       cursor: pointer;
+    }
+
+    .back p {
+      font-size: 1rem;
     }
 
     .links-container a:hover {

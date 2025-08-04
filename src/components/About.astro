@@ -108,7 +108,7 @@ const { t, id } = Astro.props;
   .links a {
     display: flex;
     align-items: center;
-    border: 1px solid var(--color-text);
+    border: 1px solid var(--color-object);
     padding-inline: 0.2rem;
     padding-block: 0.1rem;
     gap: 0.5rem;
@@ -145,11 +145,11 @@ const { t, id } = Astro.props;
     .links a {
       padding-inline: 0.5rem;
       padding-block: 0.25rem;
-      transition: transform 0.1s ease-in-out;
     }
     .links a:hover {
       box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.2);
-      transform: scale(1.05);
+      background-color: var(--color-object);
+      color: var(--color-background);
     }
   }
 </style>

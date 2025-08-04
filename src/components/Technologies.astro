@@ -1,0 +1,95 @@
+---
+const { t, id } = Astro.props;
+
+import TechnologieCard from "./TechnologieCard.astro";
+
+import AstroSvg from "../assets/icons/astro.svg";
+import Vue from "../assets/icons/vue.svg";
+import Nuxt from "../assets/icons/nuxt.svg";
+import HTML from "../assets/icons/html.svg";
+import CSS from "../assets/icons/css.svg";
+import JavaScript from "../assets/icons/js.svg";
+import TypeScript from "../assets/icons/ts.svg";
+import Tailwind from "../assets/icons/tailwind.svg";
+
+import Node from "../assets/icons/node.svg";
+import Nest from "../assets/icons/nest.svg";
+import Express from "../assets/icons/express.svg";
+import PHP from "../assets/icons/php.svg";
+import Laravel from "../assets/icons/laravel.svg";
+import MySQL from "../assets/icons/mysql.svg";
+import PostgreSQL from "../assets/icons/postgresql.svg";
+
+import AWS from "../assets/icons/aws.svg";
+import Docker from "../assets/icons/docker.svg";
+import Git from "../assets/icons/git.svg";
+---
+
+<section id={id}>
+  <h2>{t.technologies.title}</h2>
+  <div class="technologies-container">
+    <TechnologieCard
+      title={t.technologies.frontend}
+      icons={[
+        { name: "Astro", svg: AstroSvg },
+        { name: "Vue", svg: Vue },
+        { name: "Nuxt", svg: Nuxt },
+        { name: "HTML", svg: HTML },
+        { name: "CSS", svg: CSS },
+        { name: "Tailwind CSS", svg: Tailwind },
+        { name: "JavaScript", svg: JavaScript },
+        { name: "TypeScript", svg: TypeScript },
+      ]}
+    />
+    <TechnologieCard
+      title={t.technologies.backend}
+      icons={[
+        { name: "Node.js", svg: Node },
+        { name: "NestJS", svg: Nest },
+        { name: "Express", svg: Express },
+        { name: "PHP", svg: PHP },
+        { name: "Laravel", svg: Laravel },
+        { name: "MySQL", svg: MySQL },
+        { name: "PostgreSQL", svg: PostgreSQL },
+      ]}
+    />
+    <TechnologieCard
+      title={t.technologies.devops}
+      icons={[
+        { name: "AWS", svg: AWS },
+        { name: "Docker", svg: Docker },
+        { name: "Git", svg: Git },
+      ]}
+    />
+
+  </div>
+</section>
+
+<style>
+  section#technologies {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-inline: auto;
+    margin-block: 5rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+    font-style: italic;
+    text-decoration: underline;
+    margin-block: 1rem;
+  }
+
+  .technologies-container {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  @media (min-width: 1024px) {
+    .technologies-container {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+</style>

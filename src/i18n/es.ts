@@ -30,5 +30,11 @@ export default {
       company: "Proyecto Personal",
       description: "Replica del mitico juego Buscaminas, incorporando sistemas de ranking, autenticación, personalización del tablero y juego.",
     }
+  },
+  technologies: {
+    title: "Tecnologías:",
+    frontend: "Frontend",
+    backend: "Backend",
+    devops: "DevOps"
   }
 }

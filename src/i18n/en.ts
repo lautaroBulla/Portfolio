@@ -30,5 +30,11 @@ export default {
       company: "Personal Project",
       description: "Replica of the classic Minesweeper game, incorporating ranking systems, authentication, board customization, and gameplay."
     }
+  },
+  technologies: {
+    title: "Technologies:",
+    frontend: "Frontend",
+    backend: "Backend",
+    devops: "DevOps"
   }
 }

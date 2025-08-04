@@ -24,15 +24,6 @@ const { id, t } = Astro.props;
   <h1>{t.projects.title}</h1>
   <div class="projects-container">
     <ProjectCard 
-      img={Estadisticas.src} 
-      name={t.projects.estadisticas.title}
-      company={t.projects.estadisticas.company}
-      description={t.projects.estadisticas.description}
-      stack={[Vue, Laravel, MySQL]}
-      link="https://servicios.sanjose.gub.uy/Estadisticas"
-    />  
-    <ProjectCard 
-      t={t} 
       img={Buscaminas.src}
       name={t.projects.buscaminas.title}
       company={t.projects.buscaminas.company}
@@ -41,6 +32,14 @@ const { id, t } = Astro.props;
       github="https://github.com/lautaroBulla/Buscaminas"
       link="https://www.buscaminassa.com/"
     />
+    <ProjectCard 
+      img={Estadisticas.src} 
+      name={t.projects.estadisticas.title}
+      company={t.projects.estadisticas.company}
+      description={t.projects.estadisticas.description}
+      stack={[Vue, Laravel, MySQL]}
+      link="https://servicios.sanjose.gub.uy/Estadisticas"
+    />  
   </div>
 </section>
 

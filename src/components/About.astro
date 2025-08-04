@@ -113,9 +113,6 @@ const { t, id } = Astro.props;
     padding-block: 0.1rem;
     gap: 0.5rem;
   }
-  .links a:hover {
-    transform: scale(1.05);
-  }
 
   @media (min-width: 768px) {
     .name-container {
@@ -148,6 +145,11 @@ const { t, id } = Astro.props;
     .links a {
       padding-inline: 0.5rem;
       padding-block: 0.25rem;
+      transition: transform 0.1s ease-in-out;
+    }
+    .links a:hover {
+      box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.2);
+      transform: scale(1.05);
     }
   }
 </style>

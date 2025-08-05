@@ -3,6 +3,7 @@ const { t, id } = Astro.props;
 
 import FrontEnd from "../assets/icons/frontend.svg";
 import BackEnd from "../assets/icons/backend.svg";
+import GitHub from "../assets/icons/github.svg";
 
 import ExperienceCard from "./ExperienceCard.astro";
 ---
@@ -11,7 +12,7 @@ import ExperienceCard from "./ExperienceCard.astro";
   <h2>{t.experience.title}</h2>
   <div class="timeline"> 
     <ExperienceCard
-      icon={FrontEnd}
+      icons={[FrontEnd, BackEnd]}
       title={t.experience.job1.title}
       company={t.experience.job1.company}
       date={t.experience.job1.date}
@@ -20,7 +21,7 @@ import ExperienceCard from "./ExperienceCard.astro";
       class="right"
     />
     <ExperienceCard
-      icon={BackEnd}
+      icons={[BackEnd]}
       title={t.experience.job1.title}
       company={t.experience.job1.company}
       date={t.experience.job1.date}

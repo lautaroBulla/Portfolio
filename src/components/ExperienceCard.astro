@@ -1,51 +1,60 @@
 ---
-const { title, company, date, description, type, class:className, icon } = Astro.props;
+const { title, company, date, description, type, class:className, icons } = Astro.props;
 ---
 
-{ className && className.includes("right") && 
-  (
-    <div class="icon">
-      {icon && <icon />}
+<div class={`container ${className || ""}`}>
+
+  <div class={`icons ${className || ""}`}>
+    {icons && icons.length > 0 && (
+      icons.map((Icon:any) => <Icon />)
+    )}
+  </div>
+
+  <div class={`card ${className || ""}`}>
+
+    <div class={`dates ${className || ""}`}>
+      <p class="date">{date}</p>
+      {type && <p class="type">{type}</p>}
     </div>
-    <div class="job-card right">
-      <div class="dates right">
-        <p class="date">{date}</p>
-        {type && <p class="type">{type}</p>}
-      </div>
-      <div class="info right">
-        <h3>{title}</h3>
-        <p class="company">{company}</p>
-        <p class="description">{description}</p>
-      </div>
+
+    <div class={`info ${className || ""}`}>
+      <h3>{title}</h3>
+      <p class="company">{company}</p>
+      <p class="description">{description}</p>
     </div>
-  )
-}
-{ className && className.includes("left") && 
-  (
-    <div class="job-card left">
-      <div class="info left">
-        <h3>{title}</h3>
-        <p class="company">{company}</p>
-        <p class="description">{description}</p>
-      </div>
-      <div class="dates left">
-        <p class="date">{date}</p>
-        {type && <p class="type">{type}</p>}
-      </div>
-    </div>
-    <div class="icon">
-      {icon && <icon />}
-    </div>
-  )
-}
+
+  </div>
+
+</div>
 
 <style>
-  .job-card {
+  .container {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    height: 100%;
     border-radius: 5px;
     overflow: hidden;
     box-shadow: 0px 3px 6px 3px rgba(0, 0, 0, 0.2);
+  }
+
+  .icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-object-secondary);
+    padding: 1rem;
+  }
+  .icons svg {
+    width: 2.8rem;
+    height: auto;
+    aspect-ratio: 1;
+    color: var(--color-object);
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
   }
   
   .dates {
@@ -55,7 +64,7 @@ const { title, company, date, description, type, class:className, icon } = Astro
     align-items: center;
     padding: 1rem;
     background-color: var(--color-object);
-    color: whitesmoke;
+    color: var(--color-object-secondary);
   }
   .dates .date {
     font-weight: 700;
@@ -80,30 +89,114 @@ const { title, company, date, description, type, class:className, icon } = Astro
   }
 
   @media (min-width: 1024px) {
-    .job-card.right {
+    .container {
+      display: grid;
+      gap: 3rem;
+      width: 100%;
+      box-shadow: none;
+      overflow: visible;
+      align-items: center;
+    }
+    .icons {
+      width: 120px;
+      height: auto;
+      aspect-ratio: 1;
+      border-radius: 50%;
+    }
+
+    .container.right {
+      grid-template-areas: "icons card";
+      grid-template-columns: 120px 1fr;
+    }
+    .icons.right {
+      grid-area: icons;
+      position: relative;
+    }
+    .icons.right::after {
+      content: "";
+      position: absolute;
+      background: var(--color-object-secondary);
+      width: 100%;
+      height: 2px;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 100%;
+      z-index: 1;
+    }
+    .icons.right::before {
+      content: "";
+      position: absolute;
+      background: var(--color-object-secondary);
+      width: 2px;
+      height: 100%;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+    }
+    .card.right {
+      z-index: 5;
+      grid-area: card;
       display: grid;   
+      grid-template-areas: "dates info";
       grid-template-columns: auto 1fr;
-      border-radius: 0 5px 5px 0;
-      overflow: hidden;
       box-shadow: 5px 5px 6px 3px rgba(0, 0, 0, 0.2);
+      border-radius: 5px;
+      overflow: hidden;
     }
     .info.right {
+      grid-area: info;
       background: linear-gradient(to right, var(--color-background-dark), var(--color-background));
     }
     .dates.right {
-      border-radius: 5px 0 0 5px;
+      grid-area: dates;
     }
 
-    .job-card.left {
+    .container.left {
+      grid-template-areas: "card icons";
+      grid-template-columns: 1fr 120px;
+    }
+    .icons.left {
+      grid-area: icons;
+      position: relative;
+    }
+    .icons.left::after {
+      content: "";
+      position: absolute;
+      background: var(--color-object-secondary);
+      width: 100%;
+      height: 2px;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 100%;
+      z-index: 1;
+    }
+    .icons.left::before {
+      content: "";
+      position: absolute;
+      background: var(--color-object-secondary);
+      width: 2px;
+      height: 100%;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+    }
+    .card.left {
+      z-index: 5;
+      grid-area: card;
       display: grid;
+      grid-template-areas: "info dates";
       grid-template-columns: 1fr auto;
       box-shadow: -5px 5px 6px 3px rgba(0, 0, 0, 0.2);
-      border-radius: 5px 0 0 5px;
+      border-radius: 5px;
+      overflow: hidden;
     }  
     .dates.left {
-      border-radius: 0 5px 5px 0;
+      grid-area: dates;
     }
     .info.left {
+      grid-area: info;
       background: linear-gradient(to left, var(--color-background-dark), var(--color-background));
     }
 

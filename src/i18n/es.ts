@@ -21,7 +21,7 @@ export default {
     description: "Desarrollador FullStack con experiencia en proyectos reales tanto institucionales como personales.",
   },
   experience: {
-    title: "Experiencia:",
+    title: "Experiencia",
     job1: {
       title: "Desarrollador FullStack",
       company: "Intendencia de San José",
@@ -31,7 +31,7 @@ export default {
     }
   },
   projects: {
-    title: "Mis Proyectos:",
+    title: "Proyectos",
     estadisticas: {
       title: "Visor de Estadísticas",
       company: "Intendencia de San José",
@@ -44,7 +44,7 @@ export default {
     }
   },
   technologies: {
-    title: "Tecnologías:",
+    title: "Tecnologías",
     frontend: "Frontend",
     backend: "Backend",
     devops: "DevOps"

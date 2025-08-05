@@ -9,8 +9,7 @@
     --color-object: #1976D2;
     --color-object-secondary: #64B5F6;
     --color-html: #F57C00;
-    /* --color-text: #1a1b26;
-    --color-background: #e6e7ed; */
+    --color-html-secondary: #FFD54F;
   }
 
   .dark {
@@ -20,8 +19,7 @@
     --color-object: #64B5F6;
     --color-object-secondary: #1976D2;
     --color-html: #FFD54F;
-    /* --color-text: #e6e7ed;
-    --color-background: #1a1b26; */
+    --color-html-secondary: #F57C00;
   }
   
   html,

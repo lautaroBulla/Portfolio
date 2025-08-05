@@ -9,7 +9,11 @@ import ExperienceCard from "./ExperienceCard.astro";
 ---
 
 <section id={id}>
-  <h2>{t.experience.title}</h2>
+  <div class="title">
+    <hr />
+    <h2>{t.experience.title}</h2>
+    <hr />
+  </div>
   <div class="timeline"> 
     <ExperienceCard
       icons={[FrontEnd, BackEnd]}
@@ -30,14 +34,26 @@ import ExperienceCard from "./ExperienceCard.astro";
     flex-direction: column;
     width: 80%;
     margin-inline: auto;
-    margin-block: 5rem;
+    margin-block: 8rem;
   }
 
+  .title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  hr {
+    flex: 1;
+    border: none;
+    border-top: 2px solid var(--color-text); 
+    height: 0; 
+  }
   h2 {
     font-size: 1.2rem;
-    font-style: italic;
-    text-decoration: underline;
-    margin-block: 1rem;
+    font-weight: 700;
+    text-align: center;
+    margin-inline: 1rem;
   }
 
   .timeline {
@@ -45,5 +61,15 @@ import ExperienceCard from "./ExperienceCard.astro";
     display: flex;
     flex-direction: column;
     gap: 5rem;
+  }
+
+  @media (min-width: 1024px) {
+    .title {
+      margin-bottom: 3rem;
+    }
+    h2 {
+      font-size: 1.3rem;
+      margin-inline: 3rem;
+    }
   }
 </style>

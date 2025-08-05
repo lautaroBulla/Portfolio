@@ -26,7 +26,11 @@ import Git from "../assets/icons/git.svg";
 ---
 
 <section id={id}>
-  <h2>{t.technologies.title}</h2>
+  <div class="title">
+    <hr />
+    <h2>{t.technologies.title}</h2>
+    <hr />
+  </div>
   <div class="technologies-container">
     <TechnologieCard
       title={t.technologies.frontend}
@@ -71,14 +75,26 @@ import Git from "../assets/icons/git.svg";
     flex-direction: column;
     width: 80%;
     margin-inline: auto;
-    margin-block: 5rem;
+    margin-block: 8rem;
   }
 
+  .title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  hr {
+    flex: 1;
+    border: none;
+    border-top: 2px solid var(--color-text); 
+    height: 0; 
+  }
   h2 {
     font-size: 1.2rem;
-    font-style: italic;
-    text-decoration: underline;
-    margin-block: 1rem;
+    font-weight: 700;
+    text-align: center;
+    margin-inline: 1rem;
   }
 
   .technologies-container {
@@ -88,6 +104,14 @@ import Git from "../assets/icons/git.svg";
   }
 
   @media (min-width: 1024px) {
+    .title {
+      margin-bottom: 3rem;
+    }
+    h2 {
+      font-size: 1.3rem;
+      margin-inline: 3rem;
+    }
+
     .technologies-container {
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }

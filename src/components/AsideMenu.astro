@@ -2,12 +2,13 @@
 import DarkMode from '../assets/icons/darkmode.svg';
 import LightMode from '../assets/icons/lightmode.svg';
 import Bar from '../assets/icons/bar.svg';
+import Line from '../assets/icons/line.svg';
 
 import AsideMenuContainer from './AsideMenuContainer.astro';
 import SettingElement from './SettingElement.astro';
 import NavElement from './NavElement.astro';
 
-const { lang, t, class: className } = Astro.props;
+const { lang, t } = Astro.props;
 ---
 
 <nav>
@@ -31,22 +32,22 @@ const { lang, t, class: className } = Astro.props;
   </AsideMenuContainer>
 
   <AsideMenuContainer>
-    <NavElement href="#about">
-        <Bar />
-        {t.nav.about}
-    </NavElement>
-    <NavElement href="#experience">
-        <Bar />
-        {t.nav.experience}
-    </NavElement>
-    <NavElement href="#projects">
-        <Bar />
-        {t.nav.projects}
-    </NavElement>
-    <NavElement href="#technologies">
-        <Bar />
-        {t.nav.technologies}
-    </NavElement>
+    <NavElement 
+      href="#about"
+      title={t.nav.about}
+    />
+    <NavElement
+      href="#experience"
+      title={t.nav.experience}
+    />
+    <NavElement
+      href="#projects"
+      title={t.nav.projects}
+    />
+    <NavElement
+      href="#technologies"
+      title={t.nav.technologies}
+    />
   </AsideMenuContainer>
 
   <span></span>
@@ -65,12 +66,22 @@ const { lang, t, class: className } = Astro.props;
     filter: grayscale(100%);
     transition: transform 0.1s linear, filter 0.1s linear;
   }
-  button:hover {
-    cursor: pointer;
+  button:active {
     transform: scale(1.1);
     filter: grayscale(0%);
   }
-  button svg:hover {
+  button svg:active {
     fill: var(--color-text);
+  }
+
+  @media (min-width: 1024px) {
+    button:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+      filter: grayscale(0%);
+    }
+    button svg:hover {
+      fill: var(--color-text);
+    }
   }
 </style>

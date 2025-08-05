@@ -1,16 +1,16 @@
 ---
-const { title, company, date, description, type, class:className, icons } = Astro.props;
+const { title, company, date, description, type, class:className, icons, style } = Astro.props;
 ---
 
 <div class={`container ${className || ""}`}>
 
-  <div class={`icons ${className || ""}`}>
+  <div class={`icons ${className || ""}`} style={style}>
     {icons && icons.length > 0 && (
       icons.map((Icon:any) => <Icon />)
     )}
   </div>
 
-  <div class={`card ${className || ""}`}>
+  <div class={`card ${className || ""}`} style={style}>
 
     <div class={`dates ${className || ""}`}>
       <p class="date">{date}</p>
@@ -116,23 +116,44 @@ const { title, company, date, description, type, class:className, icons } = Astr
       content: "";
       position: absolute;
       background: var(--color-object-secondary);
-      width: 100%;
+      width: 0;
       height: 2px;
       top: 50%;
       transform: translateY(-50%);
-      left: 100%;
+      right: -55px;
       z-index: 1;
+      animation: fillLeft 1s ease-in var(--delay-horizontal, 0s) forwards;
+    }
+    @keyframes fillLeft {
+      from {
+        width: 0;
+      }
+      to {
+        width: 55px;
+      }
     }
     .icons.right::before {
       content: "";
       position: absolute;
       background: var(--color-object-secondary);
       width: 2px;
-      height: 100%;
+      height: 0;
       top: 100%;
       left: 50%;
       transform: translateX(-50%);
       z-index: 1;
+      animation: fillBottom 1s ease-in var(--delay-vertical, 0s) forwards;
+    }
+    @keyframes fillBottom {
+      from {
+        height: 0;
+      }
+      to {
+        height: 160px;
+      }
+    }
+    .icons.right.last::before {
+      display: none;
     }
     .card.right {
       z-index: 5;
@@ -146,7 +167,9 @@ const { title, company, date, description, type, class:className, icons } = Astr
     }
     .info.right {
       grid-area: info;
-      background: linear-gradient(to right, var(--color-background-dark), var(--color-background));
+      background-color: var(--color-background);
+      border: 1px solid var(--color-object);
+      border-radius: 0 5px 5px 0;
     }
     .dates.right {
       grid-area: dates;
@@ -164,23 +187,36 @@ const { title, company, date, description, type, class:className, icons } = Astr
       content: "";
       position: absolute;
       background: var(--color-object-secondary);
-      width: 100%;
+      width: 0;
       height: 2px;
       top: 50%;
       transform: translateY(-50%);
-      right: 100%;
+      left: -55px;
       z-index: 1;
+      animation: fillRight 1s ease-in var(--delay-horizontal, 0s) forwards;
+    }
+    @keyframes fillRight {
+      from {
+        width: 0;
+      }
+      to {
+        width: 55px;
+      }
     }
     .icons.left::before {
       content: "";
       position: absolute;
       background: var(--color-object-secondary);
       width: 2px;
-      height: 100%;
+      height: 0;
       top: 100%;
       left: 50%;
       transform: translateX(-50%);
       z-index: 1;
+      animation: fillBottom 1s ease-in var(--delay-vertical, 0s) forwards;
+    }
+    .icons.left.last::before {
+      display: none;
     }
     .card.left {
       z-index: 5;
@@ -197,7 +233,7 @@ const { title, company, date, description, type, class:className, icons } = Astr
     }
     .info.left {
       grid-area: info;
-      background: linear-gradient(to left, var(--color-background-dark), var(--color-background));
+      background-color: var(--color-background-dark);
     }
 
     .info p {

@@ -64,6 +64,7 @@ main {
 }
 main.filter {
   filter: blur(0.2rem);
+  pointer-events: none;
 }
 
 svg {

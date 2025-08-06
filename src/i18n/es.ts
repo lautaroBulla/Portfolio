@@ -18,7 +18,8 @@ export default {
     technologies: "Tecnologías",
   },
   about: {
-    description: "Desarrollador FullStack con experiencia en proyectos reales tanto institucionales como personales.",
+    description: "Desarrollador FullStack con más de 1 año de experiencia especializado en el desarrollo web.",
+    description2: "Poseo habilidades y conocimientos sólidos en variedad de tecnologías, lo que me permite lograr un desarrollo eficiente y de alta calidad. Soy proactivo en mi aprendizaje y me adapto fácilmente a nuevos entornos.",
   },
   experience: {
     title: "Experiencia",
@@ -35,12 +36,12 @@ export default {
     estadisticas: {
       title: "Visor de Estadísticas",
       company: "Intendencia de San José",
-      description: "Pagina oficial de la ciudad, donde encontrarás estadísticas de tematicas varias: Poblacion, Salud, Empleo y otras."
+      description: "Página oficial de la ciudad, donde encontrarás estadísticas de diversas temáticas: población, salud, empleo y más."
     },
     buscaminas: {
       title: "Buscaminas",
       company: "Proyecto Personal",
-      description: "Replica del mitico juego Buscaminas, incorporando sistemas de ranking, autenticación, personalización del tablero y juego.",
+      description: "Réplica del mítico juego Buscaminas, incorporando sistemas de ranking, autenticación, personalización del tablero, jugabilidad y más funcionalidades.",
     }
   },
   technologies: {

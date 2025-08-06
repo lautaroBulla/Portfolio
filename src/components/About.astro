@@ -1,6 +1,7 @@
 ---
 import LinkedInSvg from '../assets/icons/linkedin.svg';
 import GitHubSvg from '../assets/icons/github.svg';
+import Mail from '../assets/icons/mail.svg';
 import Face from '../assets/img/face.webp';
 const { t, id } = Astro.props;
 ---
@@ -18,7 +19,10 @@ const { t, id } = Astro.props;
   </div>
 
   <div class="content">
-    <p>{t.about.description}</p>
+    <div class="descriptions">
+      <p>{t.about.description}</p>
+      <p>{t.about.description2}</p>
+    </div>
     <div class="links">
       <a class="border-radius" href="https://www.linkedin.com/in/lautaroportillo/" target="_blank" rel="noopener noreferrer">
         <LinkedInSvg />
@@ -28,6 +32,10 @@ const { t, id } = Astro.props;
         <GitHubSvg />
         GitHub
       </a>
+      <div class="mail">
+        <Mail />
+        <p>lautaro.portillo.bulla@gmail.com</p>
+      </div>
     </div>  
   </div>
 
@@ -99,11 +107,14 @@ const { t, id } = Astro.props;
   .content {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    font-size: 0.9rem;
   }
   .links {
     display: flex;
     gap: 1rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+    font-size: 0.8rem;
   }
   .links a {
     display: flex;
@@ -117,6 +128,11 @@ const { t, id } = Astro.props;
     box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.2);
     background-color: var(--color-object);
     color: var(--color-background);
+  }
+  .mail {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
   }
 
   @media (min-width: 768px) {
@@ -144,8 +160,11 @@ const { t, id } = Astro.props;
     .name-container {
       font-size: 2.5rem;
     }
-    .content p {
-      font-size: 1.3rem;
+    .content .descriptions {
+      font-size: 1.1rem;
+    }
+    .links {
+      font-size: 1rem;
     }
     .links a {
       padding-inline: 0.5rem;

@@ -12,6 +12,7 @@ const observer = new IntersectionObserver(entries => {
       if (link) {
         link.classList.add("active");
         link.querySelector(".line").classList.add("active");
+        history.pushState(null, null, `#${id}`);
       }
     }
   });

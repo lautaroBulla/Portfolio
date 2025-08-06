@@ -19,7 +19,7 @@ export default {
   },
   about: {
     description: "Desarrollador FullStack con más de 1 año de experiencia especializado en el desarrollo web.",
-    description2: "Poseo habilidades y conocimientos sólidos en variedad de tecnologías, lo que me permite lograr un desarrollo eficiente y de alta calidad. Soy proactivo en mi aprendizaje y me adapto fácilmente a nuevos entornos.",
+    description2: "Poseo habilidades y conocimientos sólidos en variedad de tecnologías, lo que me permite ofrecer soluciones eficientes y de alta calidad. Soy proactivo en mi aprendizaje y me adapto fácilmente a nuevos entornos.",
   },
   experience: {
     title: "Experiencia",

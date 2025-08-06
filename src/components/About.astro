@@ -2,14 +2,16 @@
 import LinkedInSvg from '../assets/icons/linkedin.svg';
 import GitHubSvg from '../assets/icons/github.svg';
 import Mail from '../assets/icons/mail.svg';
-import Face from '../assets/img/face.webp';
+
+import Cara from '../assets/img/cara.webp';
+
 const { t, id } = Astro.props;
 ---
 
 <section id={id}>
 
   <div class="header">
-    <img src={Face.src} alt="Lautaro Portillo" width="100" height="100" /> 
+    <img src={Cara.src} alt="Lautaro Portillo" width="100" height="100" /> 
     <div class="name-container">
       <h1 class="name">
         <span style="color: var(--color-html)">&lt;</span><span style="color: var(--color-object)">Lautaro Portillo</span> <span style="color: var(--color-html)">/&gt;</span>
@@ -174,6 +176,14 @@ const { t, id } = Astro.props;
       box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.2);
       background-color: var(--color-object);
       color: var(--color-background);
+    }
+    img:hover {
+      transform: scale(1.5);
+      transition: transform 0.2s ease-in-out;
+    }
+    .header img:hover + .name-container {
+      transform: translateX(1.5rem);
+      transition: transform 0.2s ease-in-out;
     }
   }
 </style>

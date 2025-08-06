@@ -17,14 +17,14 @@ export default {
   },
   about: {
     description: "FullStack Developer with over 1 year of experience specializing in web development.",
-    description2: "I possess strong skills and knowledge in a variety of technologies, enabling me to deliver efficient and high-quality development. I am proactive in my learning and easily adaptable to new environments."
+    description2: "I possess strong skills and knowledge in a variety of technologies, enabling me to deliver efficient and high-quality solutions. I am proactive in my learning and easily adaptable to new environments."
   },
   experience: {
     title: "Experience",
     job1: {
       title: "FullStack Developer",
       company: "Intendencia de San José",
-      description: "Developed of web applications and maintenance of existing systems.",
+      description: "Development of web applications and maintenance of existing systems.",
       date: "March 2024 - July 2025",
       type: "Internship"
     }

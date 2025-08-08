@@ -42,6 +42,11 @@ export default {
       title: "Buscaminas",
       company: "Proyecto Personal",
       description: "Réplica del mítico juego Buscaminas, incorporando sistemas de ranking, autenticación, personalización del tablero, jugabilidad y más funcionalidades.",
+    },
+    hce: {
+      title: "Historia Clínica Electrónica",
+      company: "UTEC: Universidad Tecnológica",
+      description: "Implementación de una aplicación de historia clínica electrónica (HCE) basada en una arquitectura de microservicios."
     }
   },
   technologies: {

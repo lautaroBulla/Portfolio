@@ -40,6 +40,11 @@ export default {
       title: "Minesweeper",
       company: "Personal Project",
       description: "Replica of the classic Minesweeper game, featuring ranking systems, authentication, board customization, enhanced gameplay, and more."
+    },
+    hce: {
+      title: "Electronic Health Record",
+      company: "UTEC: Universidad Tecnológica",
+      description: "Implemented an electronic health record (EHR) application based on a microservices architecture."
     }
   },
   technologies: {

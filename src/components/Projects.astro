@@ -17,6 +17,10 @@ import Nest from '../assets/icons/nest.svg';
 import PostgreSQL from '../assets/icons/postgresql.svg';
 import AWS from '../assets/icons/aws.svg';
 
+import HCE from '../assets/img/hce2.png';
+import Angular from '../assets/icons/angular.svg';
+import Net from '../assets/icons/net.svg';
+
 const { id, t } = Astro.props;
 ---
 
@@ -43,7 +47,15 @@ const { id, t } = Astro.props;
       description={t.projects.estadisticas.description}
       stack={[Vue, Laravel, MySQL]}
       link="https://servicios.sanjose.gub.uy/Estadisticas"
-    />  
+    />
+    <ProjectCard 
+      img={HCE.src} 
+      name={t.projects.hce.title}
+      company={t.projects.hce.company}
+      description={t.projects.hce.description}
+      stack={[Angular, Net, ]}
+      github="https://github.com/rodrigodeleon26/.NET-Lab"
+    /> 
   </div>
 </section>
 

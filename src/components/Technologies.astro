@@ -3,15 +3,16 @@ const { t, id } = Astro.props;
 
 import TechnologieCard from "./TechnologieCard.astro";
 
-import AstroSvg from "../assets/icons/astro.svg";
 import Vue from "../assets/icons/vue.svg";
 import Nuxt from "../assets/icons/nuxt.svg";
+import Angular from "../assets/icons/angular.svg";
 import HTML from "../assets/icons/html.svg";
 import CSS from "../assets/icons/css.svg";
 import JavaScript from "../assets/icons/js.svg";
 import TypeScript from "../assets/icons/ts.svg";
 import Tailwind from "../assets/icons/tailwind.svg";
 
+import Python from "../assets/icons/python.svg";
 import Node from "../assets/icons/node.svg";
 import Nest from "../assets/icons/nest.svg";
 import Express from "../assets/icons/express.svg";
@@ -36,19 +37,20 @@ import Git from "../assets/icons/git.svg";
     <TechnologieCard
       title={t.technologies.frontend}
       icons={[
-        { name: "Astro", svg: AstroSvg },
         { name: "Vue", svg: Vue },
         { name: "Nuxt", svg: Nuxt },
+        { name: "Angular", svg: Angular },
         { name: "HTML", svg: HTML },
         { name: "CSS", svg: CSS },
-        { name: "Tailwind CSS", svg: Tailwind },
         { name: "JavaScript", svg: JavaScript },
         { name: "TypeScript", svg: TypeScript },
+        { name: "Tailwind CSS", svg: Tailwind },
       ]}
     />
     <TechnologieCard
       title={t.technologies.backend}
       icons={[
+        { name: "Python", svg: Python },
         { name: "Node.js", svg: Node },
         { name: "NestJS", svg: Nest },
         { name: "Express", svg: Express },

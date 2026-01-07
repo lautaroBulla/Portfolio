@@ -8,12 +8,15 @@ import MySQL from '../assets/icons/mysql.svg';
 
 import Buscaminas from '../assets/img/buscaminas.png';
 import Nuxt from '../assets/icons/nuxt.svg';
-import SqlServer from '../assets/icons/sqlserver.svg';
+import PostgreSQL from '../assets/icons/postgresql.svg';
 import AWS from '../assets/icons/aws.svg';
 
 import HCE from '../assets/img/hce2.png';
 import Angular from '../assets/icons/angular.svg';
 import Net from '../assets/icons/net.svg';
+import SQLServer from '../assets/icons/sqlserver.svg';
+
+import Traductor from '../assets/img/Traductor.png';
 
 const { id, t } = Astro.props;
 ---
@@ -26,11 +29,20 @@ const { id, t } = Astro.props;
   </div>
   <div class="projects-container">
     <ProjectCard 
+      img={Traductor.src} 
+      name={t.projects.traductor.title}
+      company={t.projects.traductor.company}
+      description={t.projects.traductor.description}
+      stack={[Vue, Net, AWS]}
+      github="https://github.com/lautaroBulla/Traductor"
+      link="https://traductor-phi.vercel.app/"
+    />  
+    <ProjectCard 
       img={Buscaminas.src}
       name={t.projects.buscaminas.title}
       company={t.projects.buscaminas.company}
       description={t.projects.buscaminas.description}
-      stack={[Nuxt, Net, SqlServer, AWS]}
+      stack={[Nuxt, Net, PostgreSQL, AWS]}
       github="https://github.com/lautaroBulla/Buscaminas-Web"
       link="https://www.buscaminassa.com/"
     />
@@ -47,9 +59,9 @@ const { id, t } = Astro.props;
       name={t.projects.hce.title}
       company={t.projects.hce.company}
       description={t.projects.hce.description}
-      stack={[Angular, Net, ]}
+      stack={[Angular, Net, SQLServer]}
       github="https://github.com/rodrigodeleon26/.NET-Lab"
-    /> 
+    />
   </div>
 </section>
 

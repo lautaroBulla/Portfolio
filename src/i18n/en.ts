@@ -16,7 +16,7 @@ export default {
     technologies: "Technologies"
   },
   about: {
-    description: "FullStack Developer with over 1 year of experience specializing in web development.",
+    description: "FullStack Developer with 1.5 years of experience specializing in web development.",
     description2: "I possess strong skills and knowledge in a variety of technologies, enabling me to deliver efficient and high-quality solutions. I am proactive in my learning and easily adaptable to new environments."
   },
   experience: {
@@ -24,13 +24,18 @@ export default {
     job1: {
       title: "FullStack Developer",
       company: "Intendencia de San José",
-      description: "Development of web applications and maintenance of existing systems.",
+      description: "Responsible for developing and maintaining internal and external applications using Vue.js, Laravel, and MySQL, ensuring software quality and stability.",
       date: "March 2024 - July 2025",
       type: "Internship"
     }
   },
   projects: {
     title: "Projects",
+    traductor: {
+      title: "Translator",
+      company: "Personal Project",
+      description: "I developed a web-based translator that allows real-time text and voice translation between multiple languages, using AWS services."
+    },
     estadisticas: {
       title: "Statistics Viewer",
       company: "Intendencia de San José",

@@ -71,6 +71,7 @@ svg {
   width: 1.5rem;
   height: 1.5rem;
   stroke-width: 1.5; 
+  color: var(--color-text);
 }
 
 .border-radius {

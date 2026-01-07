@@ -143,10 +143,21 @@ const { img, name, company, description, stack, github, link } = Astro.props;
     border: 1px solid var(--color-object);
     background-color: var(--color-background-dark);
   }
+  .links-container a .github {
+    fill: var(--color-text); 
+  }
+  .links-container a .link {
+    stroke: var(--color-text);
+  }
   .links-container a:active {
     background-color: var(--color-object);
-    color: var(--color-background);
   }
+  .links-container a:active .github {
+      fill: var(--color-background);
+    }
+    .links-container a:active .link {
+      stroke: var(--color-background);
+    }
 
   @media (min-width: 1024px) {
     .card {
@@ -159,7 +170,12 @@ const { img, name, company, description, stack, github, link } = Astro.props;
 
     .links-container a:hover {
       background-color: var(--color-object);
-      color: var(--color-background);
+    }
+    .links-container a:hover .github {
+      fill: var(--color-background);
+    }
+    .links-container a:hover .link {
+      stroke: var(--color-background);
     }
   }
 </style>

@@ -1,13 +1,12 @@
 ---
-import Line from '../assets/icons/line.svg';
-import Line2 from '../assets/icons/line.svg';
+import Line from '../assets/icons/Line.svg';
 
 const { href, class:className, title } = Astro.props;
 ---
 
 <li>
   <a href={href} class={className}>
-    <Line2 class="line" />
+    <Line class="line" />
     <p>{title}</p>
   </a>
 </li>

@@ -18,15 +18,15 @@ export default {
     technologies: "Tecnologías",
   },
   about: {
-    description: "Desarrollador FullStack con 1.5 años de experiencia especializado en el desarrollo web.",
-    description2: "Poseo habilidades y conocimientos sólidos en variedad de tecnologías, lo que me permite ofrecer soluciones eficientes y de alta calidad. Soy proactivo en mi aprendizaje y me adapto fácilmente a nuevos entornos.",
+    description: "Desarrollador Full-Stack con un año y medio de experiencia en el ciclo completo de desarrollo web.",
+    description2: "Cuento con experiencia práctica y sólida en la construcción de aplicaciones modernas, utilizando Vue.js, Nuxt, Laravel, ASP.NET Core y SQL. Profesional con buen manejo del Inglés, orientado a la entrega de soluciones eficientes y de alta calidad."
   },
   experience: {
     title: "Experiencia",
     job1: {
       title: "Desarrollador FullStack",
       company: "Intendencia de San José",
-      description: "Responsable del desarrollo y mantenimiento de aplicaciones internas y externas, utilizando Vue.js, Laravel y MySQL, garantizando la calidad de las mismas.",
+      description: "Responsable de las tomas de decisiones, desarrollo y mantenimiento de aplicaciones internas y externas, utilizando Vue.js, ASP.NET Core, Laravel y MySQL, garantizando la calidad de las mismas",
       date: "Marzo 2024 - Julio 2025",
       type: "Pasantía"
     }

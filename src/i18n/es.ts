@@ -18,13 +18,13 @@ export default {
     technologies: "Tecnologías",
   },
   about: {
-    description: "Desarrollador Full-Stack con un año y medio de experiencia en el ciclo completo de desarrollo web.",
+    description: "Desarrollador Backend con un año y medio de experiencia en el ciclo completo de desarrollo web.",
     description2: "Cuento con experiencia práctica y sólida en la construcción de aplicaciones modernas, utilizando Vue.js, Nuxt, Laravel, ASP.NET Core y SQL. Profesional con buen manejo del Inglés, orientado a la entrega de soluciones eficientes y de alta calidad."
   },
   experience: {
     title: "Experiencia",
     job1: {
-      title: "Desarrollador FullStack",
+      title: "Desarrollador Full-Stack",
       company: "Intendencia de San José",
       description: "Responsable de las tomas de decisiones, desarrollo y mantenimiento de aplicaciones internas y externas, utilizando Vue.js, ASP.NET Core, Laravel y MySQL, garantizando la calidad de las mismas",
       date: "Marzo 2024 - Julio 2025",

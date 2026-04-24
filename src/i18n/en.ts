@@ -16,7 +16,7 @@ export default {
     technologies: "Technologies"
   },
   about: {
-    description: "Full-Stack Developer with a year and a half of experience in the complete web development cycle.",
+    description: "Backend Developer with a year and a half of experience in the complete web development cycle.",
     description2: "I have practical and solid experience in building modern applications using Vue.js, Nuxt, ASP.NET Core, Laravel, and SQL. Professional with good command of English, focused on delivering efficient, high-quality solutions."
   },
   experience: {

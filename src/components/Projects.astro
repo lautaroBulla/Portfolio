@@ -12,10 +12,7 @@ import PostgreSQL from '../assets/icons/postgresql.svg';
 import AWS from '../assets/icons/aws.svg';
 import Azure from '../assets/icons/azure.svg';
 
-import HCE from '../assets/img/HCE2.png';
-import Angular from '../assets/icons/angular.svg';
 import Net from '../assets/icons/net.svg';
-import SQLServer from '../assets/icons/sqlserver.svg';
 
 import Traductor from '../assets/img/Traductor.png';
 
@@ -36,7 +33,6 @@ const { id, t } = Astro.props;
       description={t.projects.traductor.description}
       stack={[Vue, Net, AWS]}
       github="https://github.com/lautaroBulla/Traductor"
-      link="https://traductor-phi.vercel.app/"
     />  
     <ProjectCard 
       img={Buscaminas.src}
@@ -45,7 +41,6 @@ const { id, t } = Astro.props;
       description={t.projects.buscaminas.description}
       stack={[Nuxt, Net, PostgreSQL, Azure]}
       github="https://github.com/lautaroBulla/Buscaminas-Web"
-      link="https://www.buscaminassa.com/"
     />
     <ProjectCard 
       img={Estadisticas.src} 
@@ -54,14 +49,6 @@ const { id, t } = Astro.props;
       description={t.projects.estadisticas.description}
       stack={[Vue, Laravel, MySQL]}
       link="https://servicios.sanjose.gub.uy/Estadisticas"
-    />
-    <ProjectCard 
-      img={HCE.src} 
-      name={t.projects.hce.title}
-      company={t.projects.hce.company}
-      description={t.projects.hce.description}
-      stack={[Angular, Net, SQLServer]}
-      github="https://github.com/rodrigodeleon26/.NET-Lab"
     />
   </div>
 </section>

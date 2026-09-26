@@ -1,181 +1,36 @@
 ---
+import { Image } from 'astro:assets';
 import Link from '../assets/icons/link.svg';
-import Github from '../assets/icons/github.svg';
-
-const { img, name, company, description, stack, github, link } = Astro.props;
+import Github from '../assets/icons/GitHub.svg';
+const { img, name, company, description, stack, github, link, t } = Astro.props;
 ---
-
-<article>
-  <div class="card">
-    
-    <div class="face front">
-      <img src={img} />
-      <div class="background-text">
-        <h2>{name}</h2>
-      </div>
+<article class="project">
+  <Image src={img} alt={t.projects.preview + ': ' + name} widths={[360, 640, 960]} sizes="(min-width: 1200px) 440px, (min-width: 768px) calc(100vw - 296px), calc(100vw - 48px)" format="webp" loading="lazy" class="preview" />
+  <div class="details">
+    <p class="company">{company}</p>
+    <h3>{name}</h3>
+    <p class="description">{description}</p>
+    <ul class="stack" aria-label={t.technologies.title}>
+      {stack.map(({ icon: Icon, name: technology }: any) => <li><Icon aria-hidden="true" /><span>{technology}</span></li>)}
+    </ul>
+    <div class="links">
+      {github && <a href={github} target="_blank" rel="noopener noreferrer" aria-label={t.projects.source + ': ' + name}><Github aria-hidden="true" />{t.projects.source}<span aria-hidden="true">↗</span></a>}
+      {link && <a href={link} target="_blank" rel="noopener noreferrer" aria-label={t.projects.visit + ': ' + name}><Link aria-hidden="true" />{t.projects.visit}<span aria-hidden="true">↗</span></a>}
     </div>
-  
-    <div class="face back">
-      <h2>{name}</h2>
-      <p class="company">{company}</p>
-      <p class="description">{description}</p>
-      <div class="stack">
-        <p>Stack:</p>
-        {stack && stack.length > 0 && (
-          stack.map((Icon:any) => <Icon />)
-        )}
-      </div>  
-      <div class="links">
-        {github && (
-          <div class="links-container">
-            <a href={github} target="_blank" rel="noopener noreferrer">
-              <Github />
-            </a>
-          </div>
-        )}
-  
-        {link && (
-          <div class="links-container">
-            <a href={link} target="_blank" rel="noopener noreferrer">
-              <Link />
-            </a>
-          </div>
-        )}
-      </div>
-    </div>
-
   </div>
 </article>
-
 <style>
-  article {
-    width: 100%;
-    height: 400px;
-  }
-  .card {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transition: transform 1s;
-    transform-style: preserve-3d;
-    perspective: 1000px;
-  }
-  .card.flipped {
-    transform: rotateY(180deg);
-  }
-  
-  .face {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    border-radius: 5px; 
-    overflow: hidden;
-    box-shadow: 0px 3px 5px 3px rgba(0, 0, 0, 0.2);
-  }
-
-  .front img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top;
-    display: block;
-  }
-  .front .background-text {
-    position: absolute;
-    bottom: 0.5rem;
-    left: 0.5rem;
-    width: fit-content;
-    border-radius: 5px;
-    background-color: var(--color-background);
-  }
-  .front .background-text h2 {
-    padding-inline: 0.5rem;
-    font-weight: 700;
-  }
-
-  .back {
-    background-color: var(--color-background-dark);
-    border: 1px solid var(--color-object);
-    padding: 1rem;
-    text-align: left;
-    position: relative;
-    transform: rotateY(180deg);
-  }
-  .back h2 {
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin: 0;
-  }
-  .back p {
-    font-size: 0.9rem;
-  }
-  .company {
-    font-style: italic;
-  }
-  .description {
-    margin-block: 1.3rem;
-  }
-  .stack {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-  .links {
-    position: absolute;
-    bottom: 1rem;
-    left: 0;
-    right: 0;
-    padding-inline: 1rem;
-    display: flex;
-  }
-  .links-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-  }
-  .links-container a {
-    padding-inline: 1rem;
-    padding-block: 0.25rem;
-    border-radius: 5px;
-    border: 1px solid var(--color-object);
-    background-color: var(--color-background-dark);
-  }
-  .links-container a .github {
-    fill: var(--color-text); 
-  }
-  .links-container a .link {
-    stroke: var(--color-text);
-  }
-  .links-container a:active {
-    background-color: var(--color-object);
-  }
-  .links-container a:active .github {
-      fill: var(--color-background);
-    }
-    .links-container a:active .link {
-      stroke: var(--color-background);
-    }
-
-  @media (min-width: 1024px) {
-    .card {
-      cursor: pointer;
-    }
-
-    .back p {
-      font-size: 1rem;
-    }
-
-    .links-container a:hover {
-      background-color: var(--color-object);
-    }
-    .links-container a:hover .github {
-      fill: var(--color-background);
-    }
-    .links-container a:hover .link {
-      stroke: var(--color-background);
-    }
-  }
+  .project { display: flex; flex-direction: column; min-width: 0; border: 1px solid var(--color-border); border-radius: 8px; overflow: hidden; background: var(--color-background); }
+  .preview { width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: contain; background: var(--color-background-dark); border-bottom: 1px solid var(--color-border); }
+  .details { display: flex; flex-direction: column; flex: 1; padding: clamp(1.25rem, 2vw, 1.75rem); }
+  .company { font-size: .8rem; color: var(--color-muted); margin-bottom: .4rem; }
+  h3 { font-size: 1.25rem; font-weight: 700; line-height: 1.4; }
+  .description { font-size: .95rem; line-height: 1.75; margin-block: 1rem 1.25rem; }
+  .stack { display: flex; flex-wrap: wrap; gap: .65rem 1rem; margin-bottom: 1.5rem; }
+  .stack li { display: flex; align-items: center; gap: .4rem; font-size: .75rem; }
+  .stack svg { width: 1.25rem; height: 1.25rem; }
+  .links { margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--color-border); }
+  .links a { display: inline-flex; align-items: center; gap: .6rem; min-height: 44px; font-size: .85rem; color: var(--color-object); }
+  .links a:hover { text-decoration: underline; text-underline-offset: .25em; }
+  .links svg { fill: currentColor; color: inherit; width: 1.2rem; height: 1.2rem; }
 </style>

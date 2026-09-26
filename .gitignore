@@ -22,3 +22,6 @@ pnpm-debug.log*
 
 # file
 cosasHacer.txt
+
+# Astro production build
+dist/

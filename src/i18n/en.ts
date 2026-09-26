@@ -1,4 +1,13 @@
 export default {
+  ui: {
+    "navigation": "Main navigation",
+    "menu": "Menu",
+    "openMenu": "Open menu",
+    "close": "Close",
+    "closeMenu": "Close menu",
+    "skip": "Skip to content",
+    "description": "Lautaro Portillo, backend developer. Explore my experience, web projects and technologies."
+},
   themeOptions: {
     label: "Theme:",
     dark: "Dark",
@@ -30,6 +39,9 @@ export default {
     }
   },
   projects: {
+    source: "Source code",
+    visit: "Visit website",
+    preview: "Preview",
     title: "Projects",
     traductor: {
       title: "Translator",

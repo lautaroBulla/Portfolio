@@ -1,53 +1,46 @@
 ---
-import '@fontsource/atkinson-hyperlegible-mono';
-import "../styles/global.css";
-
+import '@fontsource/atkinson-hyperlegible-mono/latin-400.css';
+import '@fontsource/atkinson-hyperlegible-mono/latin-700.css';
+import '../styles/global.css';
 import AsideMenu from '../components/AsideMenu.astro';
 import ArrowRightAside from '../components/ArrowRightAside.astro';
-
 const { lang, t } = Astro.props;
+const canonical = 'https://www.lautaroportillo.dev/' + lang + '/';
 ---
-
 <!doctype html>
 <html lang={lang}>
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<title>Lautaro Portillo | Portfolio</title>
-
-		<script type="text/javascript" src="/scripts/darkMode.js" defer></script>
-		<script type="text/javascript" src="/scripts/language.js" defer></script>
-		<script type="text/javascript" src="/scripts/asideMenu.js" defer></script>
-		<script type="text/javascript" src="/scripts/flipCard.js" defer></script>
-		<script type="text/javascript" src="/scripts/scroll.js" defer></script>
-		
-		<meta 
-			name="description"
-			content="Lautaro Portillo website personal. Un lugar donde comparto mis proyectos y aprendizajes en el mundo del desarrollo web y la programación."
-		/>
-
-		<meta property="og:title" content="Lautaro Portillo | Portfolio" />
-		<meta property="og:description" content="Lautaro Portillo website personal. Un lugar donde comparto mis proyectos y aprendizajes en el mundo del desarrollo web y la programación." />
-		<meta property="og:image" content="https://lautaroportillo.dev/og-image.png" />
-		<meta property="og:url" content="https://lautaroportillo.dev" />
-		<meta property="og:type" content="website" />
-		
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-
-		<!-- Icons -->
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/core@1.4.0/dist/css/tabler-flags.min.css" />
-	</head>
-	<body>
-		<div id="app">
-			<aside>
-				<AsideMenu lang={lang} t={t} />
-			</aside>
-			
-			<ArrowRightAside />
-
-			<main>
-				<slot />
-			</main>
-		</div>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lautaro Portillo | Portfolio</title>
+    <script is:inline>
+      document.documentElement.classList.add('js');
+      try {
+        document.documentElement.classList.toggle('dark', localStorage.getItem('darkMode') === 'activate');
+      } catch {}
+    </script>
+    <meta name="description" content={t.ui.description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="es" href="https://www.lautaroportillo.dev/es/" />
+    <link rel="alternate" hreflang="en" href="https://www.lautaroportillo.dev/en/" />
+    <link rel="alternate" hreflang="x-default" href="https://www.lautaroportillo.dev/es/" />
+    <meta property="og:title" content="Lautaro Portillo | Portfolio" />
+    <meta property="og:description" content={t.ui.description} />
+    <meta property="og:image" content="https://www.lautaroportillo.dev/og-image.png" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content={lang === 'es' ? 'es_UY' : 'en_US'} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">{t.ui.skip}</a>
+    <div id="app">
+      <aside id="site-navigation"><AsideMenu lang={lang} t={t} /></aside>
+      <ArrowRightAside t={t} />
+      <div class="menu-backdrop" hidden aria-hidden="true"></div>
+      <main id="main-content" tabindex="-1"><slot /></main>
+    </div>
+    <script src="../scripts/site.ts"></script>
+  </body>
 </html>

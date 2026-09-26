@@ -6,7 +6,7 @@ const { title, company, date, description, type, class:className, icons, style }
 
   <div class={`icons ${className || ""}`} style={style}>
     {icons && icons.length > 0 && (
-      icons.map((Icon:any) => <Icon />)
+      icons.map((Icon:any) => <Icon aria-hidden="true" />)
     )}
   </div>
 
@@ -35,14 +35,14 @@ const { title, company, date, description, type, class:className, icons, style }
     height: 100%;
     border-radius: 5px;
     overflow: hidden;
-    box-shadow: 0px 3px 5px 3px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--color-border);
   }
 
   .icons {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--color-object-secondary);
+    background-color: var(--color-background);
     padding: 1rem;
   }
   .icons svg {
@@ -56,7 +56,7 @@ const { title, company, date, description, type, class:className, icons, style }
     display: flex;
     flex-direction: column;
   }
-  
+
   .dates {
     display: flex;
     flex-direction: column;
@@ -79,7 +79,8 @@ const { title, company, date, description, type, class:className, icons, style }
     font-weight: 700;
   }
   .info p {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
+    line-height: 1.75;
   }
   .info .company {
     font-style: italic;
@@ -90,6 +91,7 @@ const { title, company, date, description, type, class:className, icons, style }
 
   @media (min-width: 1024px) {
     .container {
+      border: 0;
       display: grid;
       gap: 3rem;
       width: 100%;
@@ -158,10 +160,10 @@ const { title, company, date, description, type, class:className, icons, style }
     .card.right {
       z-index: 5;
       grid-area: card;
-      display: grid;   
+      display: grid;
       grid-template-areas: "dates info";
-      grid-template-columns: auto 1fr;
-      box-shadow: 5px 5px 6px 3px rgba(0, 0, 0, 0.2);
+      grid-template-columns: minmax(180px, 1fr) 2fr;
+      box-shadow: none;
       border-radius: 5px;
       overflow: hidden;
     }
@@ -224,10 +226,10 @@ const { title, company, date, description, type, class:className, icons, style }
       display: grid;
       grid-template-areas: "info dates";
       grid-template-columns: 1fr auto;
-      box-shadow: -5px 5px 6px 3px rgba(0, 0, 0, 0.2);
+      box-shadow: none;
       border-radius: 5px;
       overflow: hidden;
-    }  
+    }
     .dates.left {
       grid-area: dates;
     }

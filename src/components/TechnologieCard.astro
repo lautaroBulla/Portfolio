@@ -7,14 +7,15 @@ const { title, icons } = Astro.props;
     <h3>{title}</h3>
     <div class="technologies">
       {icons && icons.length > 0 && (
-        icons.map((Icon:any) => 
+        icons.map((Icon:any) =>
           <div class="technology">
-            <Icon.svg />
+            <Icon.svg aria-hidden="true" />
             <p>{Icon.name}</p>
           </div>
         )
       )}
-    </div>  
+    </div>
+  </div>
 </article>
 
 <style>
@@ -31,10 +32,10 @@ const { title, icons } = Astro.props;
     flex-direction: column;
     align-items: center;
     background-color: var(--color-background-dark);
-    border: 1px solid var(--color-object);
+    border: 1px solid var(--color-border);
     padding: 1rem;
     border-radius: 5px;
-    box-shadow: 0px 3px 5px 3px rgba(0, 0, 0, 0.2);
+
   }
 
   h3 {
@@ -65,7 +66,7 @@ const { title, icons } = Astro.props;
     gap: 0.5rem;
   }
   .github {
-    fill: var(--color-text); 
+    fill: var(--color-text);
   }
 
   @media (min-width: 768px) {

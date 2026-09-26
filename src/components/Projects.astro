@@ -26,28 +26,28 @@ const { id, t } = Astro.props;
     <hr />
   </div>
   <div class="projects-container">
-    <ProjectCard 
-      img={Traductor.src} 
+    <ProjectCard
+      img={Traductor} t={t}
       name={t.projects.traductor.title}
       company={t.projects.traductor.company}
       description={t.projects.traductor.description}
-      stack={[Vue, Net, AWS]}
+      stack={[{ icon: Vue, name: "Vue.js" }, { icon: Net, name: ".NET" }, { icon: AWS, name: "AWS" }]}
       github="https://github.com/lautaroBulla/Traductor"
-    />  
-    <ProjectCard 
-      img={Buscaminas.src}
+    />
+    <ProjectCard
+      img={Buscaminas} t={t}
       name={t.projects.buscaminas.title}
       company={t.projects.buscaminas.company}
       description={t.projects.buscaminas.description}
-      stack={[Nuxt, Net, PostgreSQL, Azure]}
+      stack={[{ icon: Nuxt, name: "Nuxt" }, { icon: Net, name: ".NET" }, { icon: PostgreSQL, name: "PostgreSQL" }, { icon: Azure, name: "Azure" }]}
       github="https://github.com/lautaroBulla/Buscaminas-Web"
     />
-    <ProjectCard 
-      img={Estadisticas.src} 
+    <ProjectCard
+      img={Estadisticas} t={t}
       name={t.projects.estadisticas.title}
       company={t.projects.estadisticas.company}
       description={t.projects.estadisticas.description}
-      stack={[Vue, Laravel, MySQL]}
+      stack={[{ icon: Vue, name: "Vue.js" }, { icon: Laravel, name: "Laravel" }, { icon: MySQL, name: "MySQL" }]}
       link="https://servicios.sanjose.gub.uy/Estadisticas"
     />
   </div>
@@ -57,9 +57,9 @@ const { id, t } = Astro.props;
   section#projects {
     display: flex;
     flex-direction: column;
-    width: 80%;
+
     margin-inline: auto;
-    margin-block: 8rem;
+    margin-block: 4rem;
   }
 
   .title {
@@ -71,8 +71,8 @@ const { id, t } = Astro.props;
   hr {
     flex: 1;
     border: none;
-    border-top: 2px solid var(--color-text); 
-    height: 0; 
+    border-top: 2px solid var(--color-text);
+    height: 0;
   }
   h2 {
     font-size: 1.2rem;
@@ -87,7 +87,7 @@ const { id, t } = Astro.props;
     gap: 1rem;
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .title {
       margin-bottom: 3rem;
     }

@@ -24,31 +24,29 @@ const { t, id } = Astro.props;
       <p>{t.about.description}</p>
       <p>{t.about.description2}</p>
     </div>
-    <div class="hero-footer">
-      <div class="links">
-        <a class="border-radius" href="https://www.linkedin.com/in/lautaroportillo/" target="_blank" rel="noopener noreferrer">
-          <LinkedInSvg aria-hidden="true" />
-          LinkedIn
-        </a>
-        <a class="border-radius" href="https://github.com/lautaroBulla" target="_blank" rel="noopener noreferrer">
-          <GitHubSvg aria-hidden="true" />
-          GitHub
-        </a>
-        <a class="mail" href="mailto:lautaro.portillo.bulla@gmail.com" aria-label="Email: lautaro.portillo.bulla@gmail.com" title="lautaro.portillo.bulla@gmail.com">
-          <Mail aria-hidden="true" />
-          <span>Email</span>
-        </a>
-      </div>
+    <div class="links">
+      <a class="border-radius" href="https://www.linkedin.com/in/lautaroportillo/" target="_blank" rel="noopener noreferrer">
+        <LinkedInSvg aria-hidden="true" />
+        LinkedIn
+      </a>
+      <a class="border-radius" href="https://github.com/lautaroBulla" target="_blank" rel="noopener noreferrer">
+        <GitHubSvg aria-hidden="true" />
+        GitHub
+      </a>
+      <a class="mail" href="mailto:lautaro.portillo.bulla@gmail.com">
+        <Mail aria-hidden="true" />
+        <span>lautaro.portillo.bulla@gmail.com</span>
+      </a>
     </div>
   </div>
 
 </section>
 
 <style>
-  section#about { container-type: inline-size; display: flex; flex-direction: column; justify-content: center; min-height: min(900px, 100svh); padding-block: 6rem 3rem; }
-  .header, .content { width: 100%; }
-  .header { padding-bottom: 1.75rem; margin-bottom: 1.75rem; border-bottom: 1px solid var(--color-border); }
-  .name { font-size: clamp(1.25rem, 8cqi, 4rem); font-weight: 700; line-height: 1.35; letter-spacing: -.045em; }
+  section#about { display: flex; flex-direction: column; justify-content: center; min-height: min(900px, 100svh); padding-block: 5rem 3rem; }
+  .header, .content { width: 100%; max-width: 44rem; margin-inline: auto; }
+  .header { margin-bottom: 1.5rem; }
+  .name { font-size: clamp(1.35rem, 3.3vw, 2.5rem); font-weight: 700; line-height: 1.35; letter-spacing: -.045em; }
   /* Preserve the original 1.8s typing and pulsing cursor without resizing the heading. */
   .name { position: relative; width: max-content; max-width: 100%; }
   .code { display: block; white-space: nowrap; animation: typing 1.8s steps(60, end) both; }
@@ -65,20 +63,19 @@ const { t, id } = Astro.props;
     .code { animation: none; clip-path: none; }
     .name::after { display: none; }
   }
-  .descriptions { display: grid; gap: 1.5rem; line-height: 1.7; font-size: 1rem; }
-  .descriptions p:first-child { font-size: clamp(1.15rem, 3cqi, 1.5rem); line-height: 1.5; text-wrap: pretty; }
+  .descriptions { max-width: 66ch; line-height: 1.65; font-size: 1rem; }
+  .descriptions p:first-child { max-width: 58ch; font-size: clamp(1.05rem, 1.5vw, 1.2rem); line-height: 1.55; margin-bottom: 1rem; }
   .descriptions p + p { color: var(--color-muted); }
-  .hero-footer { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.25rem 2rem; margin-top: 2rem; padding-top: 1.25rem; border-top: 1px solid var(--color-border); }
-  .links { display: flex; flex-wrap: wrap; align-items: center; gap: 1.25rem; }
-  .links a { display: inline-flex; align-items: center; gap: .55rem; padding: .5rem; min-height: 44px; border: 1px solid var(--color-border); font-size: .85rem; }
+  .links { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem; margin-top: 1.5rem; }
+  .links a { display: inline-flex; align-items: center; gap: .55rem; padding: .5rem .75rem; min-height: 44px; border: 1px solid var(--color-border); font-size: .85rem; }
   .links a:not(.mail):hover { border-color: var(--color-object); color: var(--color-object); }
   .links svg { flex-shrink: 0; fill: currentColor; width: 1.25rem; height: 1.25rem; }
-  .links .mail { border-color: transparent; padding-inline: 0; }
+  .links .mail { border-color: transparent; padding-inline: 0; font-size: clamp(.75rem, 1vw, .85rem); }
   .links .mail:hover { border-bottom-color: var(--color-object); color: var(--color-object); }
   .mail span { overflow-wrap: anywhere; }
   @media (min-width: 768px) {
-    section#about { padding-block: 2rem 6rem; }
-    .header { padding-bottom: 2.5rem; margin-bottom: 2.5rem; }
-    .hero-footer { margin-top: 2.5rem; padding-top: 1.5rem; }
+    section#about { padding-block: 4rem; }
+    .header { margin-bottom: 2rem; }
+    .links { margin-top: 2rem; }
   }
 </style>

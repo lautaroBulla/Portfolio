@@ -1,6 +1,14 @@
-import { date } from "astro:schema";
 
 export default {
+  ui: {
+    "navigation": "Navegación principal",
+    "menu": "Menú",
+    "openMenu": "Abrir menú",
+    "close": "Cerrar",
+    "closeMenu": "Cerrar menú",
+    "skip": "Saltar al contenido",
+    "description": "Portafolio de Lautaro Portillo, desarrollador backend. Experiencia, proyectos web y tecnologías."
+},
   themeOptions: {
     label: "Tema:",
     dark: "Oscuro",
@@ -32,6 +40,9 @@ export default {
     }
   },
   projects: {
+    source: "Código",
+    visit: "Visitar sitio",
+    preview: "Vista previa",
     title: "Proyectos",
     traductor: {
       title: "Traductor",

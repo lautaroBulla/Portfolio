@@ -9,28 +9,29 @@ import NavElement from './NavElement.astro';
 const { lang, t } = Astro.props;
 ---
 
-<nav>
+<nav aria-label={t.ui.navigation}>
   <AsideMenuContainer class="top">
 
     <SettingElement class="first-element">
       {t.themeOptions.label}
-      <button id="darkButton">
-        <DarkMode id="darksvg" />
+      <button id="darkButton" aria-label={t.themeOptions.dark}>
+        <DarkMode id="darksvg" aria-hidden="true" />
       </button>
-      <button id="lightButton">
-        <LightMode id="lightsvg" />
+      <button id="lightButton" aria-label={t.themeOptions.light}>
+        <LightMode id="lightsvg" aria-hidden="true" />
       </button>
     </SettingElement>
 
     <SettingElement>
       {t.languageOptions.label}
-      <button id="spanishButton" class={`${lang === 'es' ? 'hidden' : ''}`}><span class="flag flag-xs flag-country-es border-radius"></span></button>
-      <button id="englishButton" class={`${lang === 'en' ? 'hidden' : ''}`}><span class="flag flag-xs flag-country-us border-radius"></span></button>
+      <div class="language-options">
+      <a class="language-link" href={lang === "es" ? "/en/" : "/es/"} lang={lang === "es" ? "en" : "es"} hreflang={lang === "es" ? "en" : "es"} aria-label={lang === "es" ? "Read in English" : "Leer en español"}>{lang === "es" ? "EN" : "ES"}</a>
+      </div>
     </SettingElement>
   </AsideMenuContainer>
 
   <AsideMenuContainer>
-    <NavElement 
+    <NavElement
       href="#about"
       title={t.nav.about}
     />
@@ -59,6 +60,10 @@ const { lang, t } = Astro.props;
     justify-content: center;
     height: 100%;
   }
+
+  .language-options { display: flex; align-items: center; gap: .25rem; }
+  .language-link { border-bottom: 1px solid transparent; transition: color .18s ease, border-bottom-color .18s ease; }
+  .language-link:hover { color: var(--color-object); border-bottom-color: var(--color-object); }
 
   button {
     filter: grayscale(100%);

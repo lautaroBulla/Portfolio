@@ -1,40 +1,15 @@
-<button id="arrow-right-button" class="aside-menu-toggle block md:hidden">
-  <svg  
-    id="arrow-right-svg"
-    xmlns="http://www.w3.org/2000/svg"  
-    viewBox="0 0 24 24"  
-    fill="none"  
-    stroke="currentColor" 
-    stroke-linecap="round"  
-    stroke-linejoin="round"  
-    class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-right">
-    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-    <path d="M5 12l14 0" />
-    <path d="M13 18l6 -6" />
-    <path d="M13 6l6 6" />
-  </svg>
-
-  <svg  
-    id="arrow-left-svg"
-    xmlns="http://www.w3.org/2000/svg"   
-    viewBox="0 0 24 24"  
-    fill="none"  
-    stroke="currentColor"  
-    stroke-linecap="round"  
-    stroke-linejoin="round"  
-    class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-left hidden">
-    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-    <path d="M5 12l14 0" />
-    <path d="M5 12l6 6" />
-    <path d="M5 12l6 -6" />
-  </svg>
+---
+import ArrowRight from '../assets/icons/arrowright.svg';
+const { t } = Astro.props;
+---
+<button id="menu-toggle" aria-controls="site-navigation" aria-expanded="false" aria-label={t.ui.openMenu} data-open-label={t.ui.openMenu} data-close-label={t.ui.closeMenu} data-menu-text={t.ui.menu} data-close-text={t.ui.close}>
+  <ArrowRight aria-hidden="true" /><span class="menu-text">{t.ui.menu}</span>
 </button>
-
 <style>
-  svg {
-    position: fixed;
-    z-index: 10;
-    top: 0.5rem;
-    left: 0.5rem;
-  }
+  button { display: none; position: fixed; z-index: 30; top: .65rem; left: .75rem; align-items: center; gap: .5rem; min-height: 44px; padding: .5rem .75rem; border: none; border-radius: 5px; background: var(--color-background); font-size: .8rem; }
+  button { min-width: 7rem; }
+  button svg { width: 1.1rem; height: 1.1rem; flex-shrink: 0; transition: transform .2s ease; }
+  button[aria-expanded="true"] svg { transform: rotate(180deg); }
+  :global(.js) button { display: inline-flex; }
+  @media (min-width: 768px) { :global(.js) button { display: none; } }
 </style>
